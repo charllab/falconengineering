@@ -1,36 +1,45 @@
-/* Sections */
+/* - - - - blocks - - - - */
 
-.section {
-    position: relative;
-    width: 100%;
-    padding: 4rem 0;
-    color: inherit;
-    background-position: center bottom;
-    background-size: cover;
-    background-repeat: no-repeat;
-    overflow: hidden;
+.pingpong {}
 
-    &.bg-pos--top-center {
-        background-position: top center;
-    }
+.stacker {
 
-    &.section--sm {
-        padding: 3rem 0;
-    }
+}
 
-    &.section--lg {
-        padding: 6rem 0;
-    }
+.stacker--blog {
 
-    @include media-breakpoint-down(md) {
-        padding: 2.5rem 0;
+}
 
-        &.section--sm {
-            padding: 2rem 0;
-        }
+.stacker--projects {
 
-        &.section--lg {
-            padding: 4rem 0;
-        }
+}
+
+.stacker--team {
+
+}
+
+/* - - - - - pages - - - - - */
+
+.pager-header {}
+
+.leader {}
+
+.blocking {}
+
+/* - - - - front-page - - - - */
+
+.hero-slider {
+    h1 {
+        color: red;
     }
 }
+
+.learn-mores {
+
+    .container {
+        background-color: lime;
+    }
+
+}
+
+.project-slider {}

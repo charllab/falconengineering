@@ -11,6 +11,9 @@
 
     <script src="https://kit.fontawesome.com/61d303198f.js" crossorigin="anonymous"></script>
 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,600;0,800;1,100;1,400;1,600;1,800&display=swap" rel="stylesheet">
+
     <?php wp_head(); ?>
 </head>
 

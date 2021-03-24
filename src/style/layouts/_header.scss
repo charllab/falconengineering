@@ -1,6 +1,4 @@
 .hero-nav-overlay {
-    padding: 2rem 0;
-    @include gradY(rgba($black, .4), 0%, transparent, 100%);
 
     .navbar-dark .navbar-toggler {
         background: $white;
@@ -13,18 +11,24 @@
         }
     }
 
+    .navbar {
+        padding: 0;
+    }
+
     .nav-logo img {
-        width: 50px;
+        width: 390px;
         height: auto;
     }
 
     .navbar-expand-lg > .container {
-        padding: 0 1.25rem;
+        padding: 0;
     }
 
     .navbar-nav .nav-link {
         color: $white;
-        font-weight: bold;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.8rem;
     }
 
     .dropdown-toggle::after {
@@ -37,9 +41,18 @@
             color: $body-color;
         }
 
-        .navbar-nav .nav-link {
-            padding: 0.4rem 1rem 0.4rem 1rem;
+        .navbar-nav .menu-item {
+            padding: 19px $spacer*1.25 18px 0;
+            &:last-of-type {
+                padding: 19px $spacer 18px;
+                background-color: $primary;
+            }
         }
+
+        .navbar-nav .nav-link {
+            padding: 0;
+        }
+
 
         .dropdown-menu {
             box-shadow: none;
@@ -56,7 +69,7 @@
                 padding-right: $spacer;
                 font-family: $font-family-sans-serif;
                 color: $gray-700;
-                font-size: 90%;
+                font-size: 0.8rem;
             }
         }
     }

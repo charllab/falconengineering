@@ -5,7 +5,7 @@
         Call <?php bloginfo('name'); ?>
     </a>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
         <div class="container">
             <div class="nav-logo">
                 <a href="<?php echo esc_url(home_url('/')); ?>">
@@ -21,7 +21,7 @@
                 <i class="fas fa-bars"></i>
             </button>
 
-            <div class="d-lg-flex flex-lg-column d-none d-lg-block bg-danger">
+            <div class="d-lg-flex flex-lg-column d-none d-lg-block">
 
                 <?php wp_nav_menu([
                     'theme_location' => 'primary',
@@ -56,15 +56,13 @@
     </div>
 
     <?php if (is_front_page()) : ?>
-        <section class="bg-info py-5">
+
+        <section class="bg-danger py-5">
             <div class="container">
                 <div class="row justify-content-center text-center">
                     <div class="col-md-10 col-lg-7 col-xl-6">
-                        <h2 class="h1 text-white">Maecenas sed diam eget</h2>
-                        <p class="lead text-muted">
-                            Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus
-                            posuere velit aliquet.
-                        </p>
+                        <h1 class="text-white">Maecenas sed diam eget</h1>
+                        <a href="#" class="btn btn-primary">learn about our services</a>
                     </div>
                 </div>
             </div>
@@ -72,7 +70,7 @@
 
     <?php else : ?>
 
-        <section class="bg-info py-5">
+        <section class="bg-success py-5">
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center">

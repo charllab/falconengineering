@@ -1,9 +1,5 @@
 <?php
-/**
- *
- * Template Name: Full Width Page
- *
- */
+global $post;
 get_header();
 ?>
     <div class="hero--content w-100 my-auto text-center">

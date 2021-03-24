@@ -2,6 +2,8 @@
 get_header();
 ?>
 
+<!--single-project.php-->
+
     <main>
 
         <div class="container">

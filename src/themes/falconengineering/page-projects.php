@@ -1,6 +1,8 @@
 <?php
-get_header();
-?>
+global $post;
+get_header(); ?>
+
+<!--page-projects.php-->
 
     <main>
 
