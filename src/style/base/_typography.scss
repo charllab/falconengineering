@@ -31,8 +31,14 @@ body {
     line-height: 1.5;
 }
 
+.text-white {
+    .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+     color: white;
+    }
+}
+
 .h1, h1 {
-    font-size: 2rem;
+    font-size: 1.7rem;
     @include media-breakpoint-up(lg) {
         font-size: 2.9rem;
     }
@@ -62,8 +68,7 @@ body {
 }
 
 p {
-    font-size: 1rem;
-    font-weight: 400;
+    margin-bottom: $spacer;
 }
 .lead {
     font-weight: 600;

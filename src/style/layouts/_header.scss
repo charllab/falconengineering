@@ -1,3 +1,17 @@
+
+.home {
+    @include media-breakpoint-up(lg) {
+        .hero-nav-overlay {
+            height: 100%;
+            position: relative;
+        }
+
+        nav.navbar {
+            position: absolute;
+        }
+    }
+}
+
 .hero-nav-overlay {
 
     .navbar-dark .navbar-toggler {
@@ -35,14 +49,23 @@
         margin-left: .45rem;
     }
 
+    @include media-breakpoint-between(md,lg) {
+        .navbar-nav .menu-item {
+
+            &:last-of-type {
+                margin-right: $spacer;
+            }
+        }
+    }
+
     @include media-breakpoint-up(lg) {
         .navbar-nav .menu-item.show > .nav-link {
-            background: $white;
-            color: $body-color;
+            color: $primary;
         }
 
         .navbar-nav .menu-item {
             padding: 19px $spacer*1.25 18px 0;
+
             &:last-of-type {
                 padding: 19px $spacer 18px;
                 background-color: $primary;
@@ -53,23 +76,39 @@
             padding: 0;
         }
 
+        .dropdown-toggle::after {
+
+        }
+
 
         .dropdown-menu {
             box-shadow: none;
             border-radius: 0;
             border: none;
             right: auto;
+            padding: $spacer/2 0;
             left: 0;
             margin: 0;
             background: $white;
             width: 100%;
 
+            & > .menu-item {
+                padding: 0 $spacer/2;
+                margin-bottom: $spacer/2;
+                &:last-of-type {
+                    background-color: transparent;
+                    padding: 0 $spacer/2;
+                    margin-bottom: 0;
+                }
+            }
+
             & > .menu-item > .nav-link {
-                padding-left: $spacer;
-                padding-right: $spacer;
+                padding: 0;
                 font-family: $font-family-sans-serif;
                 color: $gray-700;
                 font-size: 0.8rem;
+
+
             }
         }
     }
@@ -78,7 +117,7 @@
         padding: 0;
 
         .nav-logo img {
-            width: 35px;
+            width: 160px;
             height: auto;
         }
 

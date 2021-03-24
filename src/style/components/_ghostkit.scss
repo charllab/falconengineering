@@ -1,0 +1,109 @@
+
+.ghostkit-button {
+    @extend .btn;
+    @extend .btn-primary;
+    margin-bottom: $spacer;
+}
+
+.ghostkit-ping-pong__image {
+    max-width: none;
+    padding: 0;
+    min-height: 320px;
+    min-height: 100vw;
+
+    @include media-breakpoint-up(md) {
+        min-height: 592px;
+    }
+}
+
+// set margin-left as needed for pingpongs
+
+.ghostkit-grid-inner {
+
+    @include media-breakpoint-up(lg) {
+
+        .ghostkit-col-content {
+            margin-left: auto !important;
+        }
+
+    }
+
+}
+
+.ghostkit-ping-pong__image + .ghostkit-ping-pong__content {
+
+    .ghostkit-col-content {
+        margin-left: 0 !important;
+    }
+
+}
+
+
+
+.ghostkit-ping-pong__content {
+    padding-left: $spacer;
+    padding-right: $spacer;
+    padding-top: $spacer*2;
+    padding-bottom: $spacer*2;
+
+    position: relative;
+    z-index: 100;
+
+    .ghostkit-col-content {
+        margin-left: 0;
+        @extend .layout--pingpong--maxwidth;
+    }
+
+    .ghostkit-button-wrapper {
+        margin-bottom: 0;
+    }
+
+    // set content order on mobile to always be below
+    @include media-breakpoint-down(md) {
+        order: 2;
+    }
+
+}
+
+
+// custom ghost-kit template pingpong + + + + + + + + + + + + + +
+
+.ghostkit-ping-pong__content {
+    .ghostkit-col-content {
+        background-color: #F5F6F7;
+        position: relative;
+        padding: $spacer $spacer*2.25;
+        margin-top: $spacer*2;
+        margin-bottom: $spacer*2;
+        &:after {
+            content: '';
+            width: 13px;
+            height: 203px;
+            position: absolute;
+            background-color: $secondary;
+            left: 0;
+            top: 0;
+        }
+    }
+}
+
+
+.layout--pingpong--maxwidth {
+
+    @include media-breakpoint-up(xl) {
+        max-width: 730px;
+    }
+
+}
+
+
+// override ghost-kit col for ipad
+
+@include media-breakpoint-down(md) {
+
+    .ghostkit-col-6 {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+
+}

@@ -1,11 +1,6 @@
-<header id="header" class="hero-nav-overlay bg-dark">
+<header id="header" class="hero-nav-overlay">
 
-    <a class="btn btn-light rounded-0 mb-4 d-block d-lg-none"
-       href="tel:<?php echo strip_tel(get_field('phone_number', 'options')); ?>">
-        Call <?php bloginfo('name'); ?>
-    </a>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary px-50 px-lg-0 z-index-500 w-100">
         <div class="container">
             <div class="nav-logo">
                 <a href="<?php echo esc_url(home_url('/')); ?>">
@@ -21,7 +16,7 @@
                 <i class="fas fa-bars"></i>
             </button>
 
-            <div class="d-lg-flex flex-lg-column d-none d-lg-block">
+            <div class="mainnav-desktop d-lg-flex flex-lg-column d-none d-lg-block">
 
                 <?php wp_nav_menu([
                     'theme_location' => 'primary',
@@ -38,40 +33,62 @@
         </div>
     </nav>
 
-    <div class="mainnav-m collapse navbar-collapse bg-warning">
+    <div class="mainnav-m collapse navbar-collapse bg-primary">
         <?php wp_nav_menu([
             'theme_location' => 'primary',
-            'container_class' => 'container',
+            'container_class' => 'container px-1',
             'container_id' => 'mainnav',
             'menu_class' => 'navbar-nav ml-auto',
             'fallback_cb' => '',
             'menu_id' => 'main-menu',
             'walker' => new understrap_WP_Bootstrap_Navwalker(),
         ]); ?>
-
-        <div class="container">
-            <a class="btn btn-link text-white px-0"
-               href="tel:<?php echo strip_tel(get_field('phone_number', 'options')); ?>"><?php the_field('phone_number', 'options'); ?></a>
-        </div>
     </div>
 
     <?php if (is_front_page()) : ?>
 
-        <section class="bg-danger py-5">
-            <div class="container">
-                <div class="row justify-content-center text-center">
-                    <div class="col-md-10 col-lg-7 col-xl-6">
-                        <h1 class="text-white">Maecenas sed diam eget</h1>
-                        <a href="#" class="btn btn-primary">learn about our services</a>
+        <?php if (have_rows('hero_slide')): ?>
+            <div class="owl-carousel" id="hero-slide">
+
+                <?php while (have_rows('hero_slide')) : the_row(); ?>
+
+                    <?php $herosliderimageurl = get_sub_field('hero_slide_image'); ?>
+
+                    <div class="hero-slide--fullheight"
+                         style="background: #666 url(<?php echo $herosliderimageurl['sizes']['large'] ?>) no-repeat center center; background-size: cover;">
+                        <div class="block__tint-overlay"></div>
+                        <div class="item text-center h-100">
+                            <div class="container hero-slide__container h-100">
+                                <div class="row justify-content-center align-items-center h-100">
+                                    <div class="col-lg-9">
+                                        <h1 class="text-white mb-1"><?php the_sub_field('hero_slide_title'); ?></h1>
+                                        <?php if (get_sub_field('hero_slide_button_text')): ?>
+                                            <a href="<?php the_sub_field('hero_slide_button_link'); ?>"
+                                               class="btn btn-primary"><?php the_sub_field('hero_slide_button_text'); ?></a>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </section>
+
+                <?php endwhile; ?>
+
+            </div><!-- owl-carousel -->
+
+        <?php endif; ?>
+
+
+
+
 
     <?php else : ?>
 
-        <section class="bg-success py-5">
-            <div class="container">
+        <section class="bg-success py-5 position-relative">
+
+            <div class="block__tint-overlay position-absolute z-index-1"></div><!-- tint-overlay-->
+
+            <div class="container position-relative z-index-100">
                 <div class="row">
                     <div class="col-12 text-center">
                         <h1 class="text-white"><?php the_title(); ?></h1>
