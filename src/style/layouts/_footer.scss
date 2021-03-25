@@ -1,0 +1,12 @@
+.footer-icon-width {
+    width: 30px;
+}
+
+#footer-menu {
+    .nav-link {
+        @extend .small;
+        color: white;
+        margin-bottom: $spacer/5;
+        padding: 0;
+    }
+}

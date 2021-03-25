@@ -1,5 +1,4 @@
 jQuery(function () {
-
     // Hero Carousel
     jQuery('#hero-slide').owlCarousel({
         loop: true,
@@ -22,21 +21,13 @@ jQuery(function () {
 
     // Projects Carousel
     jQuery('#projects-slide').owlCarousel({
-        loop: true,
-        margin: 0,
         center: true,
-        responsiveClass: true,
-        dots: true,
-        nav: false,
-        autoplaySpeed: 1500,
-        autoplayTimeout: 9000,
-        autoplay: true,
-        items: 3,
-        navText: ["<i class='hero--arrows left-arrow--svg'></i>", "<i class='hero--arrows right-arrow--svg'></i>"],
-        responsive: {
-            992: {
-                dots: false,
-                nav: true,
+        items:1,
+        loop:true,
+        margin:120,
+        responsive:{
+            1440:{
+                items:2
             }
         }
     });
