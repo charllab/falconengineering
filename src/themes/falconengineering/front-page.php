@@ -8,7 +8,7 @@
 
             <div class="ping-bg ping--left d-flex"
                  style="background-image: url('https://source.unsplash.com/1228x980');">
-                <div class="container px-0">
+                <div class="container px-0 position-relative z-index-100">
                     <div class="row align-content-center h-100">
                         <div class="col-lg-6">
                             <div class="ping-content">
@@ -155,9 +155,9 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <a href="#">
-                            <div class="stacker stacker--blog bg-info text-white">
-                                <div class="stacker-content decoration-none position-relative z-index-100"
-                                     style="background-image: url('https://source.unsplash.com/1228x980');">
+                            <div class="stacker stacker--blog bg-info text-white position-relative" style="background-image: url('https://source.unsplash.com/1228x980');">
+                                <div class="block__tint-overlay"></div>
+                                <div class="stacker-content position-relative z-index-100">
                                     <h2 class="stacker-title text-white">Energy from a geothermal system</h2>
                                     <div class="btn btn-outline-light">Read Full Bio</div>
                                 </div><!-- stacker-content -->
@@ -167,9 +167,10 @@
 
                     <div class="col-sm-6 col-xl-3">
                         <a href="#">
-                            <div class="stacker stacker--team bg-info text-white"
+                            <div class="stacker stacker--team bg-info text-white position-relative"
                                  style="background-image: url('https://source.unsplash.com/1228x980');">
-                                <div class="stacker-content position-relative z-index-100 decoration-none">
+                                <div class="block__tint-overlay"></div>
+                                <div class="stacker-content position-relative z-index-100">
                                     <h2 class="stacker-title text-white">Dan Le Blanc</h2>
                                     <p>C.Tech.<br>
                                         Principal Electricals
@@ -182,9 +183,10 @@
 
                     <div class="col-lg-3">
                         <a href="#">
-                            <div class="stacker stacker--project bg-info text-white"
+                            <div class="stacker stacker--project bg-info text-white position-relative"
                                  style="background-image: url('https://source.unsplash.com/1228x980');">
-                                <div class="stacker-content decoration-none position-relative z-index-100">
+                                <div class="block__tint-overlay"></div>
+                                <div class="stacker-content position-relative z-index-100">
                                     <h2 class="stacker-title text-white">Residential
                                         Project Name</h2>
                                 </div><!-- stacker-content -->
