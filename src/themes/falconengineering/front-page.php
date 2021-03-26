@@ -154,33 +154,42 @@
                 </div><!-- row -->
                 <div class="row">
                     <div class="col-lg-6">
-                        <div class="stacker stacker--blog bg-info text-white">
-                            <div class="stacker-content position-relative z-index-100">
-                                <h2 class="stacker-title text-white">Energy from a geothermal system</h2>
-                                <a href="#" class="btn btn-outline-light">Read Full Bio</a>
-                            </div><!-- stacker-content -->
-                        </div><!-- stacker -->
+                        <a href="#">
+                            <div class="stacker stacker--blog bg-info text-white">
+                                <div class="stacker-content decoration-none position-relative z-index-100"
+                                     style="background-image: url('https://source.unsplash.com/1228x980');">
+                                    <h2 class="stacker-title text-white">Energy from a geothermal system</h2>
+                                    <div class="btn btn-outline-light">Read Full Bio</div>
+                                </div><!-- stacker-content -->
+                            </div><!-- stacker -->
+                        </a>
                     </div><!-- col -->
 
                     <div class="col-sm-6 col-xl-3">
-                        <div class="stacker stacker--team bg-info text-white">
-                            <div class="stacker-content position-relative z-index-100">
-                                <h2 class="stacker-title text-white">Dan Le Blanc</h2>
-                                <p>C.Tech.<br>
-                                    Principal Electrical
-                                </p>
-                                <a href="#" class="btn btn-outline-light">Read Full Bio</a>
-                            </div><!-- stacker-content -->
-                        </div><!-- stacker -->
+                        <a href="#">
+                            <div class="stacker stacker--team bg-info text-white"
+                                 style="background-image: url('https://source.unsplash.com/1228x980');">
+                                <div class="stacker-content position-relative z-index-100 decoration-none">
+                                    <h2 class="stacker-title text-white">Dan Le Blanc</h2>
+                                    <p>C.Tech.<br>
+                                        Principal Electricals
+                                    </p>
+                                    <div class="btn btn-outline-light">Read Full Bio</div>
+                                </div><!-- stacker-content -->
+                            </div><!-- stacker -->
+                        </a>
                     </div><!-- col -->
 
                     <div class="col-lg-3">
-                        <div class="stacker stacker--project bg-info text-white">
-                            <div class="stacker-content position-relative z-index-100">
-                                <h2 class="stacker-title text-white">Residential
-                                    Project Name</h2>
-                            </div><!-- stacker-content -->
-                        </div><!-- stacker -->
+                        <a href="#">
+                            <div class="stacker stacker--project bg-info text-white"
+                                 style="background-image: url('https://source.unsplash.com/1228x980');">
+                                <div class="stacker-content decoration-none position-relative z-index-100">
+                                    <h2 class="stacker-title text-white">Residential
+                                        Project Name</h2>
+                                </div><!-- stacker-content -->
+                            </div><!-- stacker -->
+                        </a>
                     </div><!-- col -->
                 </div><!-- row -->
             </div><!-- container -->
