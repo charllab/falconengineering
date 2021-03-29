@@ -1,8 +1,8 @@
 <footer class="bg-dark">
     <section class="pt-2 pb-3">
-        <div class="container h-100 bg-danger">
+        <div class="container h-100">
             <div class="row text-white h-100">
-                <div class="col-xl-2 bg-success">
+                <div class="col-xl-2">
                     <h1 class="h4">Contact us</h1>
                     <table class="w-100 small">
                         <tr class="align-top pb-50 d-block">
@@ -37,7 +37,7 @@
                         </tr>
                     </table>
                 </div>
-                <div class="col-xl-1 bg-danger">
+                <div class="col-xl-1">
                     <h2 class="h4">Menu</h2>
                     <div class="mainnav-f">
                         <?php wp_nav_menu([
@@ -51,7 +51,7 @@
                         ]); ?>
                     </div>
                 </div>
-                <div class="col-xl-3 bg-warning">
+                <div class="col-xl-3">
                     <h2 class="h4">Projects</h2>
                     <ul class="navbar-nav" id="projects-menu">
                         <?php
@@ -74,10 +74,10 @@
                                 <a href="<?php the_permalink(); ?>" class="nav-link"><?php the_title(); ?></a>
                             </li>
 
-                            <?php wp_reset_postdata(); endwhile; ?>
+                        <?php wp_reset_postdata(); endwhile; ?>
                     </ul>
                 </div>
-                <div class="col-xl-3 bg-success">
+                <div class="col-xl-3">
                     <h2 class="h4">Latest News</h2>
                     <ul class="navbar-nav" id="blog-menu">
                         <?php
@@ -99,8 +99,8 @@
                         <?php wp_reset_postdata(); endwhile; ?>
                     </ul>
                 </div>
-                <div class="col d-flex flex-column justify-content-center align-items-center bg-info">
-                    <a href="#" class="btn btn-primary">Send Us a Message</a>
+                <div class="col d-flex flex-column justify-content-center align-items-center px-0">
+                    <a href="<?php echo esc_url(home_url('/contact')); ?>" class="btn btn-primary">Send Us a Message</a>
                 </div>
             </div>
         </div>

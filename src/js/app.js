@@ -25,8 +25,12 @@ jQuery(function () {
         items:1,
         loop:true,
         margin:120,
+        dots: true,
+        nav: true,
         responsive:{
             1800:{
+                dots: false,
+                nav: true,
                 items:2
             }
         }

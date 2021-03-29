@@ -17,11 +17,13 @@ get_header();
                 $image = get_sub_field('image');
                 ?>
 
-                <div class="my-lg-3 ping-bg <?php if( get_sub_field('position') == 'right' ):?>ping--right <?php else : ?>ping--left <?php endif; ?>d-flex"
-                     style="background-image: url(<?php echo esc_url($image['url']); ?>);">
+                <div
+                    class="my-lg-3 ping-bg <?php if (get_sub_field('position') == 'right'): ?>ping--right <?php else : ?>ping--left <?php endif; ?>d-flex"
+                    style="background-image: url(<?php echo esc_url($image['url']); ?>);">
                     <div class="container px-50 px-xl-0 position-relative z-index-100">
                         <div class="row align-content-center h-100">
-                            <div class="col-lg-6 <?php if( get_sub_field('position') == 'right' ):?>ml-auto<?php endif; ?>">
+                            <div
+                                class="col-lg-6 <?php if (get_sub_field('position') == 'right'): ?>ml-auto<?php endif; ?>">
 
                                 <div class="ping-content">
 
@@ -42,13 +44,25 @@ get_header();
                                     <?php if (get_sub_field('collapsable_content_list')): ?>
 
                                         <?php if (have_rows('collapsable_content_list')): ?>
-                                            <ul>
-                                            <?php while (have_rows('collapsable_content_list')) : the_row(); ?>
-                                               <li>
-                                                   <h5><?php the_sub_field('title_tab'); ?></h5>
-                                                   <p><?php the_sub_field('content_area'); ?></p>
-                                               </li>
-                                            <?php endwhile; ?>
+                                            <ul class="list-unstyled">
+                                                <?php $counter = 0; while (have_rows('collapsable_content_list')) : the_row(); ?>
+                                                    <li class="mb-0">
+                                                    <div class="border-bottom border-secondary py-250">
+                                                        <a class="h4 text-primary semi-bold " data-toggle="collapse" data-target="#collapse-<?php echo $counter?>"
+                                                            aria-expanded="false" aria-controls="collapseExample">
+                                                            <span class="d-flex justify-content-xs-between align-items-center">
+                                                            <?php the_sub_field('title_tab'); ?>  <i class="fas fa-chevron-right"></i>
+                                                            </span>
+
+                                                        </a>
+                                                    </div>
+                                                        <div class="collapse" id="collapse-<?php echo $counter?>">
+                                                            <div class="card card-body border-0 rounded-0">
+                                                                <?php the_sub_field('content_area'); ?>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                <?php  $counter++; endwhile; ?>
                                             </ul>
                                         <?php endif; ?>
 
@@ -95,29 +109,46 @@ get_header();
 
                 <?php if (have_rows('team_members')): ?>
 
-                <div class="row">
+                    <div class="row">
 
-                    <?php while (have_rows('team_members')) : the_row(); ?>
-                    <?php $photo = get_sub_field('photo'); ?>
 
-                    <div class="col-sm-6 col-xxxl-4">
-                        <a href="#">
-                            <div class="stacker stacker--team bg-info text-white position-relative"
-                                 style="background-image: url(<?php echo esc_url($photo['url']); ?>); background-size: cover; background-position: center;">
-                                <div class="block__tint-overlay"></div>
-                                <div class="stacker-content position-relative z-index-100">
-                                    <h2 class="stacker-title text-white"><?php the_sub_field('name'); ?></h2>
-                                    <p>
-                                        <?php the_sub_field('name'); ?><br>
-                                        <?php the_sub_field('job_title'); ?>
-                                    </p>
-                                    <div class="btn btn-outline-light">Read Full Bio</div>
-                                </div><!-- stacker-content -->
-                            </div><!-- stacker -->
-                        </a>
-                    </div><!-- col -->
-                    <?php endwhile; ?>
-                </div><!-- row -->
+                        <?php $count = 0; while (have_rows('team_members')) : the_row(); $photo = get_sub_field('photo'); ?>
+
+                            <div class="col-sm-6 col-xxxl-4">
+                                <a data-toggle="modal" data-target="#modal-<?php echo $count; ?>">
+                                    <div class="stacker stacker--team bg-info text-white position-relative"
+                                         style="background-image: url(<?php echo esc_url($photo['url']); ?>); background-size: cover; background-position: center;">
+                                        <div class="block__tint-overlay"></div>
+                                        <div class="stacker-content position-relative z-index-100">
+                                            <h2 class="stacker-title text-white"><?php the_sub_field('name'); ?></h2>
+                                            <p>
+                                                <?php the_sub_field('name'); ?><br>
+                                                <?php the_sub_field('job_title'); ?>
+                                            </p>
+                                            <div class="btn btn-outline-light">Read Full Bio</div>
+                                        </div><!-- stacker-content -->
+                                    </div><!-- stacker -->
+                                </a>
+                            </div><!-- col -->
+
+                            <div class="modal fade" id="modal-<?php echo $count; ?>" tabindex="-1" role="dialog"
+                                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            <h2 class="h3"><?php the_sub_field('name'); ?></h2>
+                                            <?php the_sub_field('full_bio'); ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- modal -->
+
+                            <?php $count++; endwhile; ?>
+
+                    </div><!-- row -->
                 <?php endif; ?>
             </div><!-- container -->
         </section>

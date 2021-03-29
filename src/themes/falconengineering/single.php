@@ -4,7 +4,7 @@ get_header();
 
     <main class="py-3">
 
-        <section>
+        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
             <?php
             // Start the loop.
@@ -40,7 +40,7 @@ get_header();
 
             <?php endwhile; // end of the loop. ?>
 
-        </section>
+        </article><!-- #post-<?php the_ID(); ?> -->
 
     </main>
 
