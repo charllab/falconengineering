@@ -55,7 +55,7 @@
                     <?php $herosliderimageurl = get_sub_field('hero_slide_image'); ?>
 
                     <div class="hero-slide--fullheight"
-                         style="background: #666 url(<?php echo $herosliderimageurl['sizes']['large'] ?>) no-repeat center center; background-size: cover;">
+                         style="background: #666 url(<?php echo $herosliderimageurl['sizes']['large']; ?>) no-repeat center center; background-size: cover;">
                         <div class="block__tint-overlay"></div>
                         <div class="item text-center h-100">
                             <div class="container hero-slide__container h-100">

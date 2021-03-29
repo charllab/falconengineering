@@ -2,7 +2,9 @@
     width: 30px;
 }
 
-#footer-menu {
+#footer-menu,
+#blog-menu,
+#projects-menu {
     .nav-link {
         @extend .small;
         color: white;

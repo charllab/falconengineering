@@ -4,115 +4,62 @@
 
     <main>
 
-        <section class="about-us my-3">
-
-            <div class="ping-bg ping--left d-flex"
-                 style="background-image: url('https://source.unsplash.com/1228x980');">
-                <div class="container px-0 position-relative z-index-100">
+        <section class="about-us my-lg-3">
+            <?php $image = get_field('image'); ?>
+            <div class="ping-bg <?php if( get_field('position') == 'right' ):?>ping--right <?php else : ?>ping--left <?php endif; ?> d-flex"
+                 style="background-image: url(<?php echo esc_url($image['url']); ?>);">
+                <div class="container px-xl-0 position-relative z-index-100">
                     <div class="row align-content-center h-100">
-                        <div class="col-lg-6">
+                        <div class="col-lg-6 <?php if( get_field('position') == 'right' ):?>ml-auto<?php endif; ?>">
+
                             <div class="ping-content">
-                                <img src="<?php bloginfo('template_url'); ?>/images/svg-icon-gear.svg"
-                                     alt="<?php bloginfo('name'); ?> - Logo"
-                                     class="d-block mb-250">
-                                <h2 class="h2 semi-bold">About Us</h2>
-                                <p>Falcon Engineering has become a leader in green, energy efficient building systems.
-                                    Our firm has a rich history with deep roots in the Okanagan Valley and throughout
-                                    British Columbia. The company has years of experience in electrical and mechanical
-                                    engineering that reaches back to the 1970’s. We are dedicated to providing efficient
-                                    engineering solutions to meet our client’s needs, within budget, and with due regard
-                                    to operating and maintenance costs. We also pride ourselves on practicing our
-                                    profession with integrity at all times and without exception. Our engineering staff
-                                    are registered across Canada. </p>
-                                <a href="#" class="btn btn-primary">READ MORE ABOUT US</a>
+                                <?php $pingimg = get_field('icon'); ?>
+                                <img src="<?php echo esc_url($pingimg['url']); ?>"
+                                     alt="<?php echo esc_url($pingimg['alt']); ?>"
+                                     class="d-block mb-250 ping-icon--size">
+                                <h2 class="h2 semi-bold"><?php the_field('title'); ?></h2>
+                                <?php the_field('content'); ?>
+                                <a href="<?php the_field('button_link'); ?>"
+                                   class="btn btn-primary"><?php the_field('button_label'); ?></a>
                             </div><!-- ping-content -->
+
+                            <img src="<?php echo esc_url($image['url']); ?>"
+                                 alt="<?php echo esc_url($image['alt']); ?>"
+                                 class="d-block img-fluid d-lg-none mb-2">
+
                         </div><!-- col -->
                     </div><!-- row -->
                 </div><!-- container-->
             </div><!-- ping-bg -->
-
         </section><!-- my-3 -->
 
-        <section class="about-us my-3">
-
-            <div class="ping-bg ping--right d-flex"
-                 style="background-image: url('https://source.unsplash.com/1228x980');">
-                <div class="container px-0">
-                    <div class="row align-content-center h-100">
-                        <div class="col-lg-6 ml-auto">
-                            <div class="ping-content">
-                                <h2 class="h2 semi-bold">About Us</h2>
-                                <p>We focus on mechanical solutions that are tailored to the individual needs of each
-                                    building and client. This includes an awareness of the many factors that shape
-                                    buildings, such as intended use, life cycle costs, construction budget, indoor air
-                                    quality, and energy efficiency targets. We provide these bespoke services by
-                                    ensuring that the systems we design are efficient and cost effective. New
-                                    technologies are critically examined by our experienced team of engineers,
-                                    technicians and contract administrators, and applied where they are beneficial.</p>
-                                <p>Our proven track record and commitment to service extends through design,
-                                    construction and post-construction phases. We regularly take part in commissioning
-                                    by providing insight into the design intent, reviewing system operation, and
-                                    assisting in operator training. It is our strongly held belief that we are
-                                    responsible for providing a meaningful contribution to our client’s success that
-                                    extends well beyond the initial system design.</p>
-                                <p>We focus on mechanical solutions that are tailored to the individual needs of each
-                                    building and client. This includes an awareness of the many factors that shape
-                                    buildings, such as intended use, life cycle costs, construction budget, indoor air
-                                    quality, and energy efficiency targets. We provide these bespoke services by
-                                    ensuring that the systems we design are efficient and cost effective. New
-                                    technologies are critically examined by our experienced team of engineers,
-                                    technicians and contract administrators, and applied where they are beneficial.</p>
-                                <p>Our proven track record and commitment to service extends through design,
-                                    construction and post-construction phases. We regularly take part in commissioning
-                                    by providing insight into the design intent, reviewing system operation, and
-                                    assisting in operator training. It is our strongly held belief that we are
-                                    responsible for providing a meaningful contribution to our client’s success that
-                                    extends well beyond the initial system design.</p>
-                                <a href="#" class="btn btn-primary">READ MORE ABOUT US</a>
-                            </div><!-- ping-content -->
-                        </div><!-- col -->
-                    </div><!-- row -->
-                </div><!-- container-->
-            </div><!-- ping-bg -->
-
-        </section><!-- my-3 -->
-
-
-        <section class="learn-mores">
+        <section class="learn-mores my-4 my-xxxl-5 mb-xxxl-6">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-12 col-lg-10 bg-secondary">
-                        <div class="row">
-                            <div class="col-lg-4 text-center text-white p-2">
-                                <img src="<?php bloginfo('template_url'); ?>/images/svg-icon-gear-white.svg"
-                                     alt="<?php bloginfo('name'); ?> - Logo"
-                                     class="d-block mb-250 mx-auto">
-                                <h2 class="h4">Mechanical</h2>
-                                <p>Our mechanical solutions includes an awareness of the many factors that shape
-                                    buildings, such as intended use, life cycle costs, construction budget, indoor air
-                                    quality, and energy efficiency targets. </p>
-                                <a href="#">Learn More</a>
-                            </div>
-                            <div class="col-lg-4 text-center text-white p-2">
-                                <img src="<?php bloginfo('template_url'); ?>/images/svg-icon-gear-white.svg"
-                                     alt="<?php bloginfo('name'); ?> - Logo"
-                                     class="d-block mb-250 mx-auto">
-                                <h2 class="h4">Mechanical</h2>
-                                <p>Our mechanical solutions includes an awareness of the many factors that shape
-                                    buildings, such as intended use, life cycle costs, construction budget, indoor air
-                                    quality, and energy efficiency targets. </p>
-                                <a href="#">Learn More</a>
-                            </div>
-                            <div class="col-lg-4 text-center text-white p-2">
-                                <img src="<?php bloginfo('template_url'); ?>/images/svg-icon-gear-white.svg"
-                                     alt="<?php bloginfo('name'); ?> - Logo"
-                                     class="d-block mb-250 mx-auto">
-                                <h2 class="h4">Mechanical</h2>
-                                <p>Our mechanical solutions includes an awareness of the many factors that shape
-                                    buildings, such as intended use, life cycle costs, construction budget, indoor air
-                                    quality, and energy efficiency targets. </p>
-                                <a href="#">Learn More</a>
-                            </div>
+                    <div class="col-12 col-lg-10 bg-secondary py-1">
+                        <div class="row h-100">
+
+                            <?php if (have_rows('services')): ?>
+                                <?php while (have_rows('services')) : the_row(); ?>
+                                    <div class="col-lg-4 text-center text-white my-1 px-175 h-lg-100 d-lg-flex flex-lg-column">
+                                        <div class="pb-1">
+                                        <?php
+                                        $image = get_sub_field('icon'); ?>
+                                        <img src="<?php echo esc_url($image['url']); ?>"
+                                             alt="<?php echo esc_attr($image['alt']); ?>"
+                                             class="d-block mb-50 mx-auto icon--frontpage-services"/>
+                                        <h2 class="h4 mb-75"><?php the_sub_field('title'); ?></h2>
+                                            <?php the_sub_field('blurb'); ?>
+                                        </div><!-- pb-1 -->
+                                        <div class="mt-auto">
+
+                                            <a href="<?php the_sub_field('link_url'); ?>" class="d-block"><?php the_sub_field('link_text'); ?></a>
+                                        </div><!-- mt-auto -->
+
+                                    </div><!-- col -->
+                                <?php endwhile; ?>
+                            <?php endif; ?>
+
                         </div><!-- row -->
                     </div><!-- col -->
                 </div><!-- row -->
@@ -128,19 +75,25 @@
                 </div><!-- row -->
             </div><!-- container -->
 
+            <?php if (have_rows('project_slider')): ?>
             <div class="owl-carousel owl-theme text-center" id="projects-slide">
+                <?php while (have_rows('project_slider')) : the_row(); ?>
+                <?php $projectsliderimageurl = get_sub_field('project_image'); ?>
 
-                <div class="item container bg-danger project-item h-100 px-0">
+                <div class="item container project-item h-100 px-0"
+                     style="background: #666 url(<?php echo esc_url($projectsliderimageurl['url']); ?>) no-repeat center center; background-size: cover;">
                     <div class="row justify-content-center align-items-center h-100">
-                        <div class="project-item-content bg-white py-1">
-                            <h3 class="h2">South Okanagan Events Centre Penticton, BC</h3>
-                            <a href="#" class="btn btn-primary">Read More</a>
+                        <div class="project-item-wrapper bg-white p-150">
+                            <div class="project-item-content">
+                                <h3 class="h2 mb-75"><?php the_sub_field('project_title'); ?></h3>
+                                <a href="<?php the_sub_field('project_link'); ?>" class="btn btn-primary mb-0">Read More</a>
+                            </div><!-- project-item-content -->
                         </div><!-- bg-white -->
                     </div><!-- row -->
                 </div><!-- item container -->
-
+                <?php endwhile; ?>
             </div><!-- owl-carousel -->
-
+            <?php endif; ?>
         </section><!-- project-slider -->
 
         <section class="py-3">
@@ -153,46 +106,32 @@
                     </div><!-- col -->
                 </div><!-- row -->
                 <div class="row">
-                    <div class="col-lg-6">
-                        <a href="#">
-                            <div class="stacker stacker--blog bg-info text-white position-relative" style="background-image: url('https://source.unsplash.com/1228x980');">
-                                <div class="block__tint-overlay"></div>
-                                <div class="stacker-content position-relative z-index-100">
-                                    <h2 class="stacker-title text-white">Energy from a geothermal system</h2>
-                                    <div class="btn btn-outline-light">Read Full Bio</div>
-                                </div><!-- stacker-content -->
-                            </div><!-- stacker -->
-                        </a>
-                    </div><!-- col -->
 
-                    <div class="col-sm-6 col-xl-3">
-                        <a href="#">
-                            <div class="stacker stacker--team bg-info text-white position-relative"
-                                 style="background-image: url('https://source.unsplash.com/1228x980');">
-                                <div class="block__tint-overlay"></div>
-                                <div class="stacker-content position-relative z-index-100">
-                                    <h2 class="stacker-title text-white">Dan Le Blanc</h2>
-                                    <p>C.Tech.<br>
-                                        Principal Electricals
-                                    </p>
-                                    <div class="btn btn-outline-light">Read Full Bio</div>
-                                </div><!-- stacker-content -->
-                            </div><!-- stacker -->
-                        </a>
-                    </div><!-- col -->
+                    <?php global $post;
 
-                    <div class="col-lg-3">
-                        <a href="#">
-                            <div class="stacker stacker--project bg-info text-white position-relative"
-                                 style="background-image: url('https://source.unsplash.com/1228x980');">
-                                <div class="block__tint-overlay"></div>
-                                <div class="stacker-content position-relative z-index-100">
-                                    <h2 class="stacker-title text-white">Residential
-                                        Project Name</h2>
-                                </div><!-- stacker-content -->
-                            </div><!-- stacker -->
-                        </a>
-                    </div><!-- col -->
+                    $args = array(
+                        'posts_per_page' => 2
+                    );
+
+                    $wp_query = new WP_Query();
+                    $wp_query->query($args);
+
+                    while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
+                        <div class="col-lg-6">
+                            <a href="<?php the_permalink(); ?>">
+                                <div class="stacker stacker--blog bg-info text-white position-relative"
+                                     style="background-image: url('https://source.unsplash.com/1228x980');">
+                                    <div class="block__tint-overlay"></div>
+                                    <div class="stacker-content position-relative z-index-100">
+                                        <h2 class="stacker-title text-white"><?php the_title(); ?></h2>
+                                        <div class="btn btn-outline-light">Read More</div>
+                                    </div><!-- stacker-content -->
+                                </div><!-- stacker -->
+                            </a>
+                        </div><!-- col -->
+
+                      <?php wp_reset_postdata(); endwhile; ?>
+
                 </div><!-- row -->
             </div><!-- container -->
         </section><!-- project-slider -->

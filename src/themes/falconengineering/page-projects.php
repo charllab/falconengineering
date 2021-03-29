@@ -1,27 +1,63 @@
 <?php
-global $post;
-get_header(); ?>
 
-<!--page-projects.php-->
+get_header();
 
-    <main>
+global $wp_query;
+
+$args = array(
+    'post_type' => 'projects',
+    'post_status' => 'publish',
+    'posts_per_page' => -1,
+    'order' => 'ASC',
+    'posts_per_page' => 18
+);
+
+?>
+
+    <!--page-our-projects.php-->
+
+    <main class="py-3">
 
         <div class="container">
             <div class="row">
-                <div class="col-12">
 
-                    <?php if (have_posts()) : ?>
+                <?php
 
-                        <?php while (have_posts()) : the_post(); ?>
+                $the_query = new WP_Query($args);
 
-                            <?php the_content(); ?>
+                while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
-                        <?php endwhile; ?>
+                    <div class="col-md-6 col-lg-4">
+                        <a href="<?php the_permalink(); ?>">
+                            <div class="stacker stacker--project bg-info text-white position-relative"
+                                 style="background-image: url('https://source.unsplash.com/1228x980');">
+                                <div class="block__tint-overlay"></div>
+                                <div class="stacker-content position-relative z-index-100">
+                                    <h2 class="stacker-title text-white">
+                                        <?php the_title(); ?>
+                                    </h2>
+                                </div><!-- stacker-content -->
+                            </div><!-- stacker -->
 
-                    <?php endif; ?>
+                        </a>
+                    </div><!-- col -->
 
-                </div><!-- col -->
+                    <?php wp_reset_postdata(); ?>
+
+                <?php endwhile; ?>
+
             </div><!-- row -->
+
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-xl-8 text-center">
+                    <nav aria-label="Page navigation">
+
+                        <?php bootstrap_pagination(); ?>
+
+                    </nav>
+                </div><!-- col-->
+            </div><!-- row -->
+
         </div><!-- container -->
 
     </main>

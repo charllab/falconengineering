@@ -26,7 +26,7 @@ jQuery(function () {
         loop:true,
         margin:120,
         responsive:{
-            1440:{
+            1800:{
                 items:2
             }
         }

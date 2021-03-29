@@ -68,3 +68,60 @@ if (function_exists('acf_add_options_page')) {
         'redirect' => false
     ]);
 }
+
+/* blog pagination */
+/*
+ * custom pagination with bootstrap .pagination class
+ * source: http://www.ordinarycoder.com/paginate_links-class-ul-li-bootstrap/
+ */
+function bootstrap_pagination($echo = true)
+{
+    global $wp_query;
+
+    $big = 999999999; // need an unlikely integer
+
+    $pages = paginate_links(array(
+        'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+        'format' => '?paged=%#%',
+        'current' => max(1, get_query_var('paged')),
+        'total' => $wp_query->max_num_pages,
+        'type'  => 'array',
+        'prev_next'   => true,
+        'prev_text'    => __('«'),
+        'next_text'    => __('»'),
+    ));
+
+    if (is_array($pages)) {
+        $paged = (get_query_var('paged') == 0) ? 1 : get_query_var('paged');
+
+        $pagination = '<ul class="pagination justify-content-center">';
+
+        foreach ($pages as $page) {
+            $pagination .= '<li class="page-item">' . str_replace('page-numbers', 'page-link', $page) . '</li>';
+        }
+
+        $pagination .= '</ul>';
+
+        if ($echo) {
+            echo $pagination;
+        } else {
+            return $pagination;
+        }
+    }
+}
+
+/* trim that excerpt */
+function get_excerpt()
+{
+    $excerpt = get_the_content();
+    $excerpt = preg_replace(" ([.*?])", '', $excerpt);
+    $excerpt = strip_shortcodes($excerpt);
+    $excerpt = strip_tags($excerpt);
+    $excerpt = substr($excerpt, 0, 280);
+    $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
+    $excerpt = trim(preg_replace('/\s+/', ' ', $excerpt));
+    $excerpt = $excerpt . '...';
+    return $excerpt;
+}
+
+/* use get_excerpt() instead of the_excerpt() */

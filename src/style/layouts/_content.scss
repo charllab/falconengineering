@@ -33,6 +33,11 @@
     background-position-x: -30px;
 }
 
+
+.icon--frontpage-services {
+    width: 60px;
+}
+
 /* - - - - owl fixes -- - - */
 
 .owl-stage {
@@ -73,6 +78,11 @@
 
     .stacker-title {
         margin-bottom: $spacer;
+
+        @include media-breakpoint-up(md) {
+            height: $spacer*4;
+        }
+
     }
 
     .stacker-content {
@@ -235,6 +245,11 @@
     background-repeat: no-repeat;
     background-position-y: center;
     background-position-x: right;
+
+    @include media-breakpoint-down(md) {
+        background-image: none !important;
+        min-height: auto;
+    }
 }
 
 .ping--left {
@@ -247,10 +262,15 @@
 
 .ping-content {
     background-color: #F5F6F7;
-    padding: $spacer $spacer*3;
-    margin-top: $spacer*2;
-    margin-bottom: $spacer*2;
+    padding: $spacer $spacer*1.5;
     position: relative;
+
+    @include media-breakpoint-up(lg) {
+        margin-bottom: $spacer*2;
+        margin-top: $spacer*2;
+        padding: $spacer $spacer*3;
+    }
+
     &:after {
         content: '';
         width: 13px;
@@ -262,14 +282,20 @@
     }
 }
 
+.ping-icon--size {
+    width: 80px;
+}
+
 // hero project-carousel
 
 .project-item {
     min-height: 574px;
 }
 
-.project-item-content {
-    max-width: 70%;
-    margin-left: 15%;
-    margin-right: 15%;
+.project-item-wrapper {
+    display: block;
+    width: 70%;
+    max-width: 844px;
+    margin-left: auto;
+    margin-right: auto;
 }

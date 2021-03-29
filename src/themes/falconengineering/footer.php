@@ -37,14 +37,14 @@
                         </tr>
                     </table>
                 </div>
-                <div class="col-xl-2 bg-danger">
+                <div class="col-xl-1 bg-danger">
                     <h2 class="h4">Menu</h2>
                     <div class="mainnav-f">
                         <?php wp_nav_menu([
                             'theme_location' => 'secondary',
                             'container_class' => 'container px-0',
                             'container_id' => 'mainnav-f',
-                            'menu_class' => 'navbar-nav ml-auto',
+                            'menu_class' => 'navbar-nav',
                             'fallback_cb' => '',
                             'menu_id' => 'footer-menu',
                             'walker' => new understrap_WP_Bootstrap_Navwalker(),
@@ -53,9 +53,51 @@
                 </div>
                 <div class="col-xl-3 bg-warning">
                     <h2 class="h4">Projects</h2>
+                    <ul class="navbar-nav" id="projects-menu">
+                        <?php
+
+                        global $wp_query;
+
+                        $args = array(
+                            'post_type' => 'projects',
+                            'post_status' => 'publish',
+                            'posts_per_page' => -1,
+                            'order' => 'ASC',
+                            'posts_per_page' => 5
+                        );
+
+                        $the_query = new WP_Query($args);
+
+                        while ($the_query->have_posts()) : $the_query->the_post(); ?>
+
+                            <li class="menu-item">
+                                <a href="<?php the_permalink(); ?>" class="nav-link"><?php the_title(); ?></a>
+                            </li>
+
+                            <?php wp_reset_postdata(); endwhile; ?>
+                    </ul>
                 </div>
-                <div class="col-xl-2 bg-success">
+                <div class="col-xl-3 bg-success">
                     <h2 class="h4">Latest News</h2>
+                    <ul class="navbar-nav" id="blog-menu">
+                        <?php
+                        global $post;
+                        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                        $args = array(
+                            'posts_per_page' => 5
+                        );
+
+                        $wp_query = new WP_Query();
+                        $wp_query->query($args);
+
+                        while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
+
+                        <li class="menu-item">
+                            <a href="<?php the_permalink(); ?>" class="nav-link"><?php the_title(); ?></a>
+                        </li>
+
+                        <?php wp_reset_postdata(); endwhile; ?>
+                    </ul>
                 </div>
                 <div class="col d-flex flex-column justify-content-center align-items-center bg-info">
                     <a href="#" class="btn btn-primary">Send Us a Message</a>
