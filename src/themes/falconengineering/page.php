@@ -111,6 +111,10 @@ get_header();
 
                     <div class="row">
 
+                        <div class="col-12">
+                            <h2 class="h1 semi-bold">Principals</h2>
+                        </div>
+
 
                         <?php $count = 0; while (have_rows('team_members')) : the_row(); $photo = get_sub_field('photo'); ?>
 
