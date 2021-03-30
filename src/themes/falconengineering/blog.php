@@ -24,12 +24,12 @@ get_header(); ?>
                     $wp_query = new WP_Query();
                     $wp_query->query($args);
 
-                    while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
+                    while ($wp_query->have_posts()) : $wp_query->the_post(); $bloghero = get_field('blog_hero'); ?>
 
                         <div class="col-lg-6">
                             <a href="<?php the_permalink(); ?>">
                                 <div class="stacker stacker--blog bg-info text-white position-relative"
-                                     style="background-image: url('https://source.unsplash.com/1228x980');">
+                                     style="background-image: url(<?php echo esc_url($bloghero['url']); ?>); background-size: cover; background-repeat: no-repeat;">
                                     <div class="block__tint-overlay"></div>
                                     <div class="stacker-content position-relative z-index-100">
                                         <h2 class="stacker-title text-white"><?php the_title(); ?></h2>

@@ -107,7 +107,7 @@
 
     .stacker-title {
         @extend .lead;
-        max-width: 160px;
+        max-width: 210px;
         margin-bottom: 0;
     }
 
@@ -281,6 +281,18 @@
     }
 }
 
+.ping-footer {
+    background-color: $secondary;
+    padding: $spacer $spacer*1.5;
+    position: relative;
+
+    @include media-breakpoint-up(lg) {
+        margin-bottom: $spacer*2;
+        margin-top: -$spacer*2;
+        padding: $spacer $spacer*3;
+    }
+}
+
 .ping-icon--size {
     width: 80px;
 }
@@ -320,3 +332,13 @@
         }
     }
 }
+
+.single-projects {
+
+    .page-title-section {
+        display: none;
+    }
+
+}
+
+p:empty { display:none; }
