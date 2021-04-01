@@ -8,8 +8,7 @@ $args = array(
     'post_type' => 'projects',
     'post_status' => 'publish',
     'posts_per_page' => -1,
-    'order' => 'ASC',
-    'posts_per_page' => 18
+    'order' => 'ASC'
 );
 
 ?>

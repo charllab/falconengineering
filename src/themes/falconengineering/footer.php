@@ -113,7 +113,7 @@
                     <p class="text-white small py-xl-50 mb-xl-0">&copy; <?php echo Date('Y') . ' ' . get_bloginfo('name'); ?>. All rights reserved.</p>
                 </div>
                 <div class="col-lg-12 col-xl-4 text-center">
-                    <p class="text-white small py-xl-50 mb-xl-0"><a href="<?php echo esc_url(home_url('/terms-and-conditions')); ?>" class="text-white">Terms & Conditions</a> |
+                    <p class="text-white small py-xl-50 mb-xl-0"><a href="<?php echo esc_url(home_url('/terms-of-use')); ?>" class="text-white">Terms of Use</a> |
                         <a href="<?php echo esc_url(home_url('/privacy-policy')); ?>" class="text-white">Privacy Policy</a></p>
                 </div>
                 <div class="col-lg-12 col-xl-4 text-center text-xl-right">

@@ -78,6 +78,7 @@
 
     .stacker-title {
         margin-bottom: $spacer;
+        font-size: 1.75rem;
 
         @include media-breakpoint-up(md) {
             height: $spacer*4;
@@ -107,7 +108,9 @@
 
     .stacker-title {
         @extend .lead;
-        max-width: 210px;
+        font-size: 1rem;
+        max-width: 340px;
+        min-height: $spacer*2;
         margin-bottom: 0;
     }
 

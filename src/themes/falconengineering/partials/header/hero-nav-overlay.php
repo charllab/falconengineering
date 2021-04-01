@@ -79,8 +79,8 @@
         <?php endif; ?>
 
     <?php else : ?>
-
-        <section class="bg-success py-3 position-relative page-title-section">
+        <?php $pagehero = get_field('page_header_image'); ?>
+        <section class="py-3 position-relative page-title-section" style="background: #666 url(<?php echo $pagehero['sizes']['large']; ?>) no-repeat center center; background-size: cover;">
             <div class="block__tint-overlay position-absolute z-index-1"></div><!-- tint-overlay-->
             <div class="container position-relative z-index-100">
                 <div class="row">

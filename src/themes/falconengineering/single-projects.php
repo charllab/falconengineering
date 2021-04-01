@@ -89,6 +89,8 @@ get_header();
 
                 $the_query = new WP_Query(array(
                     'post_type' => 'projects',
+                    'posts_per_page' => 3,
+                    'orderby' => 'rand',
                     'post__not_in' => array($post->ID)
                 ));
 

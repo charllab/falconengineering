@@ -19,7 +19,7 @@ get_header();
 
                 <div
                     class="my-lg-3 ping-bg <?php if (get_sub_field('position') == 'right'): ?>ping--right <?php else : ?>ping--left <?php endif; ?>d-flex"
-                    style="background-image: url(<?php echo esc_url($image['url']); ?>);">
+                    style="background-image: url(<?php echo esc_url($image['url']); ?>);" id="<?php the_sub_field('block_id'); ?>">
                     <div class="container px-50 px-xl-0 position-relative z-index-100">
                         <div class="row align-content-center h-100">
                             <div
