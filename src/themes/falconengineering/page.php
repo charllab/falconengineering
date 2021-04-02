@@ -6,7 +6,42 @@ get_header();
 
 <main class="my-3">
 
+    <?php if (get_field('page_intro')): ?>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="lead text-center mb-1">
+                        <?php the_field('page_intro'); ?>
+                    </div><!-- lead -->
+                </div><!-- col -->
+            </div><!-- row -->
+        </div><!-- container -->
+    <?php endif; ?>
+
     <?php if (is_page([36])) : ?>
+
+        <?php if (have_rows('breakdown_blocks')): ?>
+            <div class="container mb-3">
+                <div class="row">
+                    <?php while (have_rows('breakdown_blocks')) : the_row(); ?>
+
+                        <div class="col">
+
+                            <div class="breakdown-blocks">
+                                <div class="bg-secondary py-50 px-75">
+                                    <h3 class="h4 semi-bold text-white mb-0"><?php the_sub_field('block_title'); ?></h3>
+                                </div>
+                                <div class="px-75 pt-50 pb-75">
+                                    <?php the_sub_field('block_text'); ?>
+                                </div>
+                            </div>
+
+                        </div><!-- col -->
+
+                    <?php endwhile; ?>
+                </div><!-- row -->
+            </div><!-- container -->
+        <?php endif; ?>
 
 
         <?php if (have_rows('pingpongs')): ?>
@@ -19,7 +54,8 @@ get_header();
 
                 <div
                     class="my-lg-3 ping-bg <?php if (get_sub_field('position') == 'right'): ?>ping--right <?php else : ?>ping--left <?php endif; ?>d-flex"
-                    style="background-image: url(<?php echo esc_url($image['url']); ?>);" id="<?php the_sub_field('block_id'); ?>">
+                    style="background-image: url(<?php echo esc_url($image['url']); ?>);"
+                    id="<?php the_sub_field('block_id'); ?>">
                     <div class="container px-50 px-xl-0 position-relative z-index-100">
                         <div class="row align-content-center h-100">
                             <div
@@ -45,24 +81,28 @@ get_header();
 
                                         <?php if (have_rows('collapsable_content_list')): ?>
                                             <ul class="list-unstyled">
-                                                <?php $counter = 0; while (have_rows('collapsable_content_list')) : the_row(); ?>
+                                                <?php $counter = 0;
+                                                while (have_rows('collapsable_content_list')) : the_row(); ?>
                                                     <li class="mb-0">
-                                                    <div class="border-bottom border-secondary py-250">
-                                                        <a class="h4 text-primary semi-bold " data-toggle="collapse" data-target="#collapse-<?php echo $counter?>"
-                                                            aria-expanded="false" aria-controls="collapseExample">
-                                                            <span class="d-flex justify-content-xs-between align-items-center">
-                                                            <?php the_sub_field('title_tab'); ?>  <i class="fas fa-chevron-right"></i>
+                                                        <div class="border-bottom border-secondary py-250">
+                                                            <a class="h4 text-primary semi-bold " data-toggle="collapse"
+                                                               data-target="#collapse-<?php echo $counter ?>"
+                                                               aria-expanded="false" aria-controls="collapseExample">
+                                                            <span
+                                                                class="d-flex justify-content-xs-between align-items-center">
+                                                            <?php the_sub_field('title_tab'); ?>  <i
+                                                                    class="fas fa-chevron-right"></i>
                                                             </span>
 
-                                                        </a>
-                                                    </div>
-                                                        <div class="collapse" id="collapse-<?php echo $counter?>">
+                                                            </a>
+                                                        </div>
+                                                        <div class="collapse" id="collapse-<?php echo $counter ?>">
                                                             <div class="card card-body border-0 rounded-0">
                                                                 <?php the_sub_field('content_area'); ?>
                                                             </div>
                                                         </div>
                                                     </li>
-                                                <?php  $counter++; endwhile; ?>
+                                                    <?php $counter++; endwhile; ?>
                                             </ul>
                                         <?php endif; ?>
 
@@ -83,7 +123,7 @@ get_header();
                     </div><!-- container-->
                 </div><!-- ping-bg -->
 
-            <?php  endwhile; ?>
+            <?php endwhile; ?>
         <?php endif; ?>
 
 
@@ -125,24 +165,28 @@ get_header();
 
                                         <?php if (have_rows('collapsable_content_list')): ?>
                                             <ul class="list-unstyled">
-                                                <?php $counter = 0; while (have_rows('collapsable_content_list')) : the_row(); ?>
+                                                <?php $counter = 0;
+                                                while (have_rows('collapsable_content_list')) : the_row(); ?>
                                                     <li class="mb-0">
                                                         <div class="border-bottom border-secondary py-250">
-                                                            <a class="h4 text-primary semi-bold " data-toggle="collapse" data-target="#collapse-<?php echo $counter?>"
+                                                            <a class="h4 text-primary semi-bold " data-toggle="collapse"
+                                                               data-target="#collapse-<?php echo $counter ?>"
                                                                aria-expanded="false" aria-controls="collapseExample">
-                                                            <span class="d-flex justify-content-xs-between align-items-center">
-                                                            <?php the_sub_field('title_tab'); ?>  <i class="fas fa-chevron-right"></i>
+                                                            <span
+                                                                class="d-flex justify-content-xs-between align-items-center">
+                                                            <?php the_sub_field('title_tab'); ?>  <i
+                                                                    class="fas fa-chevron-right"></i>
                                                             </span>
 
                                                             </a>
                                                         </div>
-                                                        <div class="collapse" id="collapse-<?php echo $counter?>">
+                                                        <div class="collapse" id="collapse-<?php echo $counter ?>">
                                                             <div class="card card-body border-0 rounded-0">
                                                                 <?php the_sub_field('content_area'); ?>
                                                             </div>
                                                         </div>
                                                     </li>
-                                                    <?php  $counter++; endwhile; ?>
+                                                    <?php $counter++; endwhile; ?>
                                             </ul>
                                         <?php endif; ?>
 
@@ -193,7 +237,9 @@ get_header();
                         </div>
 
 
-                        <?php $count = 0; while (have_rows('team_members')) : the_row(); $photo = get_sub_field('photo'); ?>
+                        <?php $count = 0;
+                        while (have_rows('team_members')) : the_row();
+                            $photo = get_sub_field('photo'); ?>
 
                             <div class="col-sm-6 col-xxxl-4">
                                 <a data-toggle="modal" data-target="#modal-<?php echo $count; ?>">
