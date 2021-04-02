@@ -247,6 +247,7 @@
     background-repeat: no-repeat;
     background-position-y: center;
     background-position-x: right;
+    background-size: 1420px 980px;
 
     @include media-breakpoint-down(md) {
         background-image: none !important;
@@ -345,9 +346,48 @@
 }
 
 .breakdown-blocks {
-
         background-color: #F5F6F7;
+}
 
+.collapse-trigger {
+    cursor: pointer;
+    border-bottom: 1px solid $secondary ;
+    a.h4 {
+        color: $primary !important;
+    }
+}
+
+.li-collape-parent {
+    .collapse-trigger {
+        background: $primary;
+        border-bottom-color: $primary;
+        & > a.h4 {
+            color: white !important;
+        }
+    }
+}
+
+.tr-valignment {
+    td {
+        vertical-align: top;
+        padding-bottom: $spacer*.25;
+    }
+    td+td {
+        padding-left: $spacer*.5;
+    }
 }
 
 p:empty { display:none; }
+
+.google-map {
+    border: 1px solid #f5f6f7;
+}
+
+.google-map iframe {
+    width: 100%;
+    margin-bottom: -7px;
+}
+
+iframe {
+    width: 100%;
+}

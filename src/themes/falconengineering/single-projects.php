@@ -15,6 +15,10 @@ get_header();
                     <div class="row align-content-center h-100">
                         <div class="col-lg-6 <?php if (get_field('position') == 'right'): ?>ml-auto<?php endif; ?>">
 
+                            <img src="<?php echo esc_url($image['url']); ?>"
+                                 alt="<?php echo esc_url($image['alt']); ?>"
+                                 class="d-block img-fluid d-lg-none mt-2">
+
                             <div class="ping-content">
                                 <h2 class="h2 semi-bold"><?php the_title(); ?></h2>
                                 <?php if (get_field('sub_title')): ?>
@@ -65,10 +69,6 @@ get_header();
                                     </ul>
                                 </div><!-- ping-content bg-secondary -->
                             <?php endif; ?>
-
-                            <img src="<?php echo esc_url($image['url']); ?>"
-                                 alt="<?php echo esc_url($image['alt']); ?>"
-                                 class="d-block img-fluid d-lg-none mb-2">
 
                         </div><!-- col -->
                     </div><!-- row -->

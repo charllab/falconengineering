@@ -443,10 +443,13 @@ body #gform_wrapper_2 .gform_body .gform_fields .gfield textarea {
 
 // style error top message
 body #gform_wrapper_2 .validation_error {
-    background: red;
+    background: darken(red,10%);
     color: white;
-    border: 1px solid white;
+    border: none;
+    font-weight: 400;
     margin-bottom: 0;
+    padding-left: 20px;
+    padding-right: 20px;
     max-width: calc(100% - 16px);
 }
 
@@ -460,9 +463,17 @@ body #gform_wrapper_2 .gform_footer input[type=submit] {
 // error wrapper
 body #gform_wrapper_2 .gform_body .gform_fields .gfield_error {
     border: none;
-    background: red;
+    background: lighten(red, 45%);
+    color: $primary;
     margin: 0;
     padding-top: 0;
+    border-bottom: 1px solid red;
+
+    .gfield_description.validation_message {
+        color: red;
+        font-style: normal;
+        font-weight: 400;
+    }
 }
 
 // validation message
@@ -493,6 +504,19 @@ body #gform_wrapper_2 .gform_footer {
 
 body.page-id-23 #gform_wrapper_2 .gform_footer input[type=submit] {
     border-radius: 0;
-    background-color: $secondary;
+    background-color: $primary;
     color: white;
+}
+
+body #gform_wrapper_2 .gform_body .gform_fields .gfield input[type=email] {
+    margin-top: 0;
+    padding-left: 10px;
+}
+body #gform_wrapper_2 .gform_body .gform_fields .gfield input[type=tel] {
+    padding-left: 10px;
+}
+body #gform_wrapper_2 {
+    #validation_message_2_4 {
+        padding-top: 0;
+    }
 }

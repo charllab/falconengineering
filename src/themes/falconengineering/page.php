@@ -8,9 +8,9 @@ get_header();
 
     <?php if (get_field('page_intro')): ?>
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="lead text-center mb-1">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="lead text-center mb-2">
                         <?php the_field('page_intro'); ?>
                     </div><!-- lead -->
                 </div><!-- col -->
@@ -21,13 +21,13 @@ get_header();
     <?php if (is_page([36])) : ?>
 
         <?php if (have_rows('breakdown_blocks')): ?>
-            <div class="container mb-3">
+            <div class="container">
                 <div class="row">
                     <?php while (have_rows('breakdown_blocks')) : the_row(); ?>
 
-                        <div class="col">
+                        <div class="col-12 col-lg">
 
-                            <div class="breakdown-blocks">
+                            <div class="breakdown-blocks mb-75 mb-lg-0">
                                 <div class="bg-secondary py-50 px-75">
                                     <h3 class="h4 semi-bold text-white mb-0"><?php the_sub_field('block_title'); ?></h3>
                                 </div>
@@ -61,6 +61,12 @@ get_header();
                             <div
                                 class="col-lg-6 <?php if (get_sub_field('position') == 'right'): ?>ml-auto<?php endif; ?>">
 
+
+
+                                <img src="<?php echo esc_url($image['url']); ?>"
+                                     alt="<?php echo esc_url($image['alt']); ?>"
+                                     class="d-block img-fluid d-lg-none mt-2">
+
                                 <div class="ping-content">
 
                                     <?php if (get_sub_field('icon')): ?>
@@ -83,20 +89,20 @@ get_header();
                                             <ul class="list-unstyled">
                                                 <?php $counter = 0;
                                                 while (have_rows('collapsable_content_list')) : the_row(); ?>
-                                                    <li class="mb-0">
-                                                        <div class="border-bottom border-secondary py-250">
-                                                            <a class="h4 text-primary semi-bold " data-toggle="collapse"
+                                                    <li class="mb-0 pb-0">
+                                                        <div class="border-bottom border-secondary px-75 py-50 collapse-trigger">
+                                                            <a class="h4 semi-bold" data-toggle="collapse"
                                                                data-target="#collapse-<?php echo $counter ?>"
                                                                aria-expanded="false" aria-controls="collapseExample">
                                                             <span
                                                                 class="d-flex justify-content-xs-between align-items-center">
                                                             <?php the_sub_field('title_tab'); ?>  <i
-                                                                    class="fas fa-chevron-right"></i>
+                                                                    class="fas fa-chevron-right pl-50"></i>
                                                             </span>
 
                                                             </a>
                                                         </div>
-                                                        <div class="collapse" id="collapse-<?php echo $counter ?>">
+                                                        <div class="collapse panel-collapse" id="collapse-<?php echo $counter ?>">
                                                             <div class="card card-body border-0 rounded-0">
                                                                 <?php the_sub_field('content_area'); ?>
                                                             </div>
@@ -113,10 +119,6 @@ get_header();
                                            class="btn btn-primary"><?php the_field('button_label'); ?></a>
                                     <?php endif; ?>
                                 </div><!-- ping-content -->
-
-                                <img src="<?php echo esc_url($image['url']); ?>"
-                                     alt="<?php echo esc_url($image['alt']); ?>"
-                                     class="d-block img-fluid d-lg-none mb-2">
 
                             </div><!-- col -->
                         </div><!-- row -->

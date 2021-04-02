@@ -1,4 +1,14 @@
 jQuery(function () {
+
+    // bootrap accordion parent class
+    $('.panel-collapse').on('show.bs.collapse', function () {
+        $(this).parent().addClass('li-collape-parent');
+    });
+
+    $('.panel-collapse').on('hidden.bs.collapse', function () {
+        $(this).parent().removeClass('li-collape-parent');
+    });
+
     // Hero Carousel
     jQuery('#hero-slide').owlCarousel({
         loop: true,

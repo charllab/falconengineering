@@ -36,7 +36,7 @@
     <div class="mainnav-m collapse navbar-collapse bg-primary">
         <?php wp_nav_menu([
             'theme_location' => 'primary',
-            'container_class' => 'container px-1',
+            'container_class' => 'container px-1 py-75',
             'container_id' => 'mainnav',
             'menu_class' => 'navbar-nav ml-auto',
             'fallback_cb' => '',

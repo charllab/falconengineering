@@ -1,4 +1,6 @@
 <footer class="bg-dark">
+
+    <?php if (!is_page([23])) : ?>
     <section class="pt-2 pb-3">
         <div class="container h-100">
             <div class="row text-white h-100">
@@ -106,6 +108,9 @@
         </div>
 
     </section>
+
+    <?php endif; ?>
+
     <section class="py-50 border-top">
         <div class="container">
             <div class="row">

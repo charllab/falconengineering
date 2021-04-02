@@ -12,6 +12,10 @@
                     <div class="row align-content-center h-100">
                         <div class="col-lg-6 <?php if( get_field('position') == 'right' ):?>ml-auto<?php endif; ?>">
 
+                            <img src="<?php echo esc_url($image['url']); ?>"
+                                 alt="<?php echo esc_url($image['alt']); ?>"
+                                 class="d-block img-fluid d-lg-none mt-2">
+
                             <div class="ping-content">
                                 <?php $pingimg = get_field('icon'); ?>
                                 <img src="<?php echo esc_url($pingimg['url']); ?>"
@@ -22,10 +26,6 @@
                                 <a href="<?php the_field('button_link'); ?>"
                                    class="btn btn-primary"><?php the_field('button_label'); ?></a>
                             </div><!-- ping-content -->
-
-                            <img src="<?php echo esc_url($image['url']); ?>"
-                                 alt="<?php echo esc_url($image['alt']); ?>"
-                                 class="d-block img-fluid d-lg-none mb-2">
 
                         </div><!-- col -->
                     </div><!-- row -->

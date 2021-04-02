@@ -19,8 +19,6 @@ get_header(); ?>
 
                             <?php while (have_posts()) : the_post(); ?>
 
-                                <h2 class="text-capitalize"><?php the_title(); ?></h2>
-
                                 <?php the_content(); ?>
 
                             <?php endwhile; ?>
@@ -30,12 +28,12 @@ get_header(); ?>
                     </div><!-- col -->
 
                     <div class="col-lg-5">
-                        <div class="pt-3 pb-2 px-2 bg-light">
-                            <h2>Contact Information</h2>
+                        <div class="pt-1 pb-75 px-2 bg-light">
+                            <h2 class="h3">Contact Information</h2>
                             <?php
                             $removethese = array("(", " ", ")", "-");
                             ?>
-                            <table>
+                            <table class="tr-valignment">
                                 <tr>
                                     <td><strong>Phone: </strong></td>
                                     <td>
@@ -57,10 +55,9 @@ get_header(); ?>
                             </table>
                         </div><!-- bg-light -->
 
-                        <div class="px-0">
-                            <?php
-                            echo get_field('map_embed_code', 'option');
-                            ?>
+                        <div class="px-0 google-map">
+                            <?php $mapurl = get_field('map_embed_code', 'option'); ?>
+                            <iframe src="<?php echo $mapurl; ?>" width="600" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                         </div><!-- px-0 -->
                     </div><!-- col -->
                 </div><!-- row -->
