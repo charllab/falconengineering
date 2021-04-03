@@ -391,3 +391,10 @@ p:empty { display:none; }
 iframe {
     width: 100%;
 }
+
+// aos
+.hero-slide--header {
+    background: red;
+    overflow: hidden;
+    height: 100px;
+}

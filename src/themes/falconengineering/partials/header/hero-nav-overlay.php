@@ -61,10 +61,16 @@
                             <div class="container hero-slide__container h-100">
                                 <div class="row justify-content-center align-items-center h-100">
                                     <div class="col-lg-9">
-                                        <h1 class="text-white mb-1"><?php the_sub_field('hero_slide_title'); ?></h1>
+                                        <h1 class="text-white mb-1"data-aos="fade-up"
+                                            data-aos-easing="ease-in-back"
+                                            data-aos-delay="300"
+                                            data-aos-offset="0"><?php the_sub_field('hero_slide_title'); ?></h1>
                                         <?php if (get_sub_field('hero_slide_button_text')): ?>
                                             <a href="<?php the_sub_field('hero_slide_button_link'); ?>"
-                                               class="btn btn-primary"><?php the_sub_field('hero_slide_button_text'); ?></a>
+                                               class="btn btn-primary" class="text-white mb-1"data-aos="fade-up"
+                                               data-aos-easing="ease-in-back"
+                                               data-aos-delay="600"
+                                               data-aos-offset="0"><?php the_sub_field('hero_slide_button_text'); ?></a>
                                         <?php endif; ?>
                                     </div>
                                 </div>

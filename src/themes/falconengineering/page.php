@@ -23,9 +23,16 @@ get_header();
         <?php if (have_rows('breakdown_blocks')): ?>
             <div class="container">
                 <div class="row">
-                    <?php while (have_rows('breakdown_blocks')) : the_row(); ?>
-
-                        <div class="col-12 col-lg">
+                    <?php $counter = 0; while (have_rows('breakdown_blocks')) : the_row(); ?>
+                        <?php if ($counter == 0) {
+                            $durationDelay = 600;
+                        } elseif ($counter == 1) {
+                            $durationDelay = 1000;
+                        } elseif ($counter == 2) {
+                            $durationDelay = 1400;
+                        }
+                        ?>
+                        <div class="col-12 col-lg" data-aos="fade-up" data-aos-duration="<?php echo $durationDelay; ?>">
 
                             <div class="breakdown-blocks mb-75 mb-lg-0">
                                 <div class="bg-secondary py-50 px-75">
@@ -38,7 +45,7 @@ get_header();
 
                         </div><!-- col -->
 
-                    <?php endwhile; ?>
+                    <?php $counter++; endwhile; ?>
                 </div><!-- row -->
             </div><!-- container -->
         <?php endif; ?>
@@ -61,14 +68,11 @@ get_header();
                             <div
                                 class="col-lg-6 <?php if (get_sub_field('position') == 'right'): ?>ml-auto<?php endif; ?>">
 
-
-
                                 <img src="<?php echo esc_url($image['url']); ?>"
                                      alt="<?php echo esc_url($image['alt']); ?>"
                                      class="d-block img-fluid d-lg-none mt-2">
 
-                                <div class="ping-content">
-
+                                <div class="ping-content" data-aos="<?php if (get_sub_field('position') == 'right'): ?>fade-left<?php else: ?>fade-right<?php endif; ?>" data-aos-duration="1000">
                                     <?php if (get_sub_field('icon')): ?>
                                         <img src="<?php echo esc_url($icon['url']); ?>"
                                              alt="<?php echo esc_url($icon['alt']); ?>"
@@ -147,7 +151,7 @@ get_header();
                             <div
                                 class="col-lg-6 <?php if (get_sub_field('position') == 'right'): ?>ml-auto<?php endif; ?>">
 
-                                <div class="ping-content">
+                                <div class="ping-content" data-aos="<?php if (get_sub_field('position') == 'right'): ?>fade-left<?php else: ?>fade-right<?php endif; ?>" data-aos-duration="1000">
 
                                     <?php if (get_sub_field('icon')): ?>
                                         <img src="<?php echo esc_url($icon['url']); ?>"
@@ -235,7 +239,7 @@ get_header();
                     <div class="row">
 
                         <div class="col-12">
-                            <h2 class="h1 semi-bold">Principals</h2>
+                            <h2 class="h1 semi-bold" data-aos="fade-up">Principals</h2>
                         </div>
 
 
@@ -243,7 +247,7 @@ get_header();
                         while (have_rows('team_members')) : the_row();
                             $photo = get_sub_field('photo'); ?>
 
-                            <div class="col-sm-6 col-xxxl-4">
+                            <div class="col-sm-6 col-xxxl-4" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1500">
                                 <a data-toggle="modal" data-target="#modal-<?php echo $count; ?>">
                                     <div class="stacker stacker--team bg-info text-white position-relative"
                                          style="background-image: url(<?php echo esc_url($photo['url']); ?>); background-size: cover; background-position: center;">
@@ -264,15 +268,15 @@ get_header();
                                  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                                     <div class="modal-content">
-                                        <div class="modal-body">
+                                        <div class="modal-body p-2">
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                             <h2 class="h3"><?php the_sub_field('name'); ?></h2>
                                             <?php the_sub_field('full_bio'); ?>
-                                        </div>
-                                    </div>
-                                </div>
+                                        </div><!-- modal-body -->
+                                    </div><!-- modal-content -->
+                                </div><!-- modal-dialog -->
                             </div><!-- modal -->
 
                             <?php $count++; endwhile; ?>

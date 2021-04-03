@@ -26,7 +26,7 @@ get_header(); ?>
 
                     while ($wp_query->have_posts()) : $wp_query->the_post(); $bloghero = get_field('blog_hero'); ?>
 
-                        <div class="col-lg-6">
+                        <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1500">
                             <a href="<?php the_permalink(); ?>">
                                 <div class="stacker stacker--blog bg-info text-white position-relative"
                                      style="background-image: url(<?php echo esc_url($bloghero['url']); ?>); background-size: cover; background-repeat: no-repeat;">

@@ -1,5 +1,6 @@
 jQuery(function () {
 
+
     // bootrap accordion parent class
     $('.panel-collapse').on('show.bs.collapse', function () {
         $(this).parent().addClass('li-collape-parent');
@@ -28,6 +29,10 @@ jQuery(function () {
             }
         }
     });
+
+    // initialize AOS
+    AOS.init();
+
 
     // Projects Carousel
     jQuery('#projects-slide').owlCarousel({

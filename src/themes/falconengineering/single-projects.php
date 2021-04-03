@@ -19,6 +19,7 @@ get_header();
                                  alt="<?php echo esc_url($image['alt']); ?>"
                                  class="d-block img-fluid d-lg-none mt-2">
 
+                            <div data-aos="<?php if (get_sub_field('position') == 'right'): ?>fade-left<?php else: ?>fade-right<?php endif; ?>" data-aos-duration="1000">
                             <div class="ping-content">
                                 <h2 class="h2 semi-bold"><?php the_title(); ?></h2>
                                 <?php if (get_field('sub_title')): ?>
@@ -70,6 +71,8 @@ get_header();
                                 </div><!-- ping-content bg-secondary -->
                             <?php endif; ?>
 
+                            </div><!-- aos -->
+
                         </div><!-- col -->
                     </div><!-- row -->
                 </div><!-- container-->
@@ -80,7 +83,7 @@ get_header();
 
             <div class="row">
                 <div class="col-12">
-                    <h2 class="mb-2 semi-bold">See More Projects</h2>
+                    <h2 class="mb-2 semi-bold" data-aos="fade-up">See More Projects</h2>
                 </div><!-- col -->
             </div><!-- row -->
 
@@ -98,7 +101,7 @@ get_header();
                     while ($the_query->have_posts()) {
                         $the_query->the_post(); ?>
                         <?php $otherimage = get_field('project_hero'); ?>
-                        <div class="col-md-6 col-lg-4">
+                        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1500">
                             <a href="<?php the_permalink(); ?>">
                                 <div class="stacker stacker--project bg-info text-white position-relative"
                                      style="background-image: url(<?php echo esc_url($otherimage['url']); ?>); background-size: cover; background-repeat: no-repeat;">

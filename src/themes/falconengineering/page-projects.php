@@ -26,7 +26,7 @@ $args = array(
 
                 while ($the_query->have_posts()) : $the_query->the_post(); $projecthero = get_field('project_hero');?>
 
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1500">
                         <a href="<?php the_permalink(); ?>">
                             <div class="stacker stacker--project bg-info text-white position-relative"
                                  style="background-image: url(<?php echo esc_url($projecthero['url']); ?>); background-size: cover; background-repeat: no-repeat;">
