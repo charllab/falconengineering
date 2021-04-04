@@ -23,7 +23,8 @@ get_header();
                             <div class="ping-content">
                                 <h2 class="h2 semi-bold"><?php the_title(); ?></h2>
                                 <?php if (get_field('sub_title')): ?>
-                                    <h3 class="h4 semi-bold"><?php the_field('sub_title'); ?></h3>
+                                    <?php $subTitle = strtolower(get_field('sub_title')); ?>
+                                    <h3 class="h4 semi-bold"><?php echo ucwords($subTitle); ?></h3>
                                 <?php endif; ?>
 
                                 <?php the_field('content'); ?>
