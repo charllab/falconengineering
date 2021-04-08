@@ -34,7 +34,7 @@
                                       class="">
                             </td>
                             <td>
-                                <a href="<?php echo get_field('googlemaps_link','option'); ?>" title="View on Google Maps">
+                                <a href="<?php echo get_field('googlemaps_link','option'); ?>" title="View on Google Maps" target="_blank">
                                     <?php echo get_field('address', 'option'); ?>
                                 </a>
                             </td>
