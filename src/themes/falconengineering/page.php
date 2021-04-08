@@ -95,18 +95,22 @@ get_header();
                                                 while (have_rows('collapsable_content_list')) : the_row(); ?>
                                                     <li class="mb-0 pb-0">
                                                         <div class="border-bottom border-secondary px-75 py-50 collapse-trigger">
+                                                            <?php
+                                                            $tabName = strtolower(get_sub_field('title_tab'));
+                                                            $tabName = preg_replace('/[^A-Za-z0-9]/', "", $tabName);
+                                                            ?>
                                                             <a class="h4 semi-bold" data-toggle="collapse"
-                                                               data-target="#collapse-<?php echo $counter ?>"
+                                                               data-target="#collapse-<?php echo $tabName ?>-<?php echo $counter ?>"
                                                                aria-expanded="false" aria-controls="collapseExample">
-                                                            <span
-                                                                class="d-flex justify-content-xs-between align-items-center">
-                                                            <?php the_sub_field('title_tab'); ?>  <i
-                                                                    class="fas fa-chevron-right pl-50"></i>
+
+                                                                <span class="d-flex justify-content-xs-between align-items-center">
+                                                                <?php the_sub_field('title_tab'); ?>
+                                                                    <i class="fas fa-chevron-right pl-50"></i>
                                                             </span>
 
                                                             </a>
                                                         </div>
-                                                        <div class="collapse panel-collapse" id="collapse-<?php echo $counter ?>">
+                                                        <div class="collapse panel-collapse" id="collapse-<?php echo $tabName ?>-<?php echo $counter ?>">
                                                             <div class="card card-body border-0 rounded-0">
                                                                 <?php the_sub_field('content_area'); ?>
                                                             </div>
