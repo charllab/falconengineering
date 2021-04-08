@@ -255,7 +255,7 @@ get_header();
                                 <a data-toggle="modal" data-target="#modal-<?php echo $count; ?>">
                                     <div class="stacker stacker--team bg-info text-white position-relative"
                                          style="background-image: url(<?php echo esc_url($photo['url']); ?>); background-size: cover; background-position: center;">
-                                        <div class="block__tint-overlay"></div>
+                                        <div class="block__tint-overlay block__tint-overlay--hover"></div>
                                         <div class="stacker-content position-relative z-index-100">
                                             <h2 class="stacker-title text-white"><?php the_sub_field('name'); ?></h2>
                                             <p>

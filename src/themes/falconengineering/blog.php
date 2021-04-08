@@ -30,7 +30,7 @@ get_header(); ?>
                             <a href="<?php the_permalink(); ?>">
                                 <div class="stacker stacker--blog bg-info text-white position-relative"
                                      style="background-image: url(<?php echo esc_url($bloghero['url']); ?>); background-size: cover; background-repeat: no-repeat;">
-                                    <div class="block__tint-overlay"></div>
+                                    <div class="block__tint-overlay block__tint-overlay--hover"></div>
                                     <div class="stacker-content position-relative z-index-100">
                                         <h2 class="stacker-title text-white"><?php the_title(); ?></h2>
                                         <div class="btn btn-outline-light">Read More</div>
