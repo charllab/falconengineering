@@ -1,5 +1,27 @@
 jQuery(function () {
 
+    // grab the initial top offset of the navigation
+    var stickyNavTop = $('.navbar').offset().top;
+
+    // our function that decides weather the navigation bar should have "fixed" css position or not.
+    var stickyNav = function(){
+        var scrollTop = $(window).scrollTop(); // our current vertical position from the top
+
+        // if we've scrolled more than the navigation, change its position to fixed to stick to top,
+        // otherwise change it back to relative
+        if (scrollTop > stickyNavTop) {
+            $('.navbar').addClass('sticky');
+        } else {
+            $('.navbar').removeClass('sticky');
+        }
+    };
+
+    stickyNav();
+    // and run it again every time you scroll
+    $(window).scroll(function() {
+        stickyNav();
+    });
+
 
     // bootrap accordion parent class
     $('.panel-collapse').on('show.bs.collapse', function () {
@@ -42,6 +64,9 @@ jQuery(function () {
         margin:120,
         dots: true,
         nav: true,
+        autoplay: false,
+        autoplaySpeed: 1500,
+        autoplayTimeout: 9000,
         responsive:{
             1800:{
                 dots: false,

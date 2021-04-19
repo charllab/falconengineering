@@ -96,8 +96,22 @@
     padding-top: $spacer*13;
     padding-left: $spacer*2;
 
+    .stacker-details--min-h {
+
+        @include media-breakpoint-only(sm) {
+            height: $spacer*5;
+        }
+
+        @include media-breakpoint-up(xxxl) {
+            max-width: 80%;
+            height: $spacer*5.5;
+        }
+
+    }
+
     .stacker-title {
         margin-bottom: 0;
+
     }
 }
 

@@ -257,11 +257,10 @@ get_header();
                                          style="background-image: url(<?php echo esc_url($photo['url']); ?>); background-size: cover; background-position: center;">
                                         <div class="block__tint-overlay block__tint-overlay--hover"></div>
                                         <div class="stacker-content position-relative z-index-100">
-                                            <h2 class="stacker-title text-white"><?php the_sub_field('name'); ?></h2>
-                                            <p>
-                                                <?php the_sub_field('name'); ?><br>
-                                                <?php the_sub_field('job_title'); ?>
-                                            </p>
+                                            <div class="stacker-details--min-h">
+                                                <h2 class="stacker-title text-white"><?php the_sub_field('name'); ?></h2>
+                                                <p><?php the_sub_field('job_title'); ?></p>
+                                            </div><!-- stacker-details--min-h -->
                                             <div class="btn btn-outline-light">Read Full Bio</div>
                                         </div><!-- stacker-content -->
                                     </div><!-- stacker -->
@@ -278,6 +277,7 @@ get_header();
                                             </button>
                                             <h2 class="h3"><?php the_sub_field('name'); ?></h2>
                                             <?php the_sub_field('full_bio'); ?>
+                                            <a href="mailto:<?php echo get_field('email_address', 'option'); ?>" class="btn btn-primary">Contact Us</a>
                                         </div><!-- modal-body -->
                                     </div><!-- modal-content -->
                                 </div><!-- modal-dialog -->

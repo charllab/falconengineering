@@ -100,7 +100,7 @@
                         <div class="item container project-item h-100 px-0"
                              style="background: #666 url(<?php echo esc_url($projectsliderimageurl['url']); ?>) no-repeat center center; background-size: cover;">
                             <div class="row justify-content-center align-items-center h-100">
-                                <div class="project-item-wrapper bg-white p-150">
+                                <div class="project-item-wrapper bg-white-alpha p-150">
                                     <div class="project-item-content">
                                         <h3 class="h2 mb-75"><?php the_sub_field('project_title'); ?></h3>
                                         <a href="<?php the_sub_field('project_link'); ?>" class="btn btn-primary mb-0">Read
