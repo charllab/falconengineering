@@ -25,7 +25,7 @@ $project_query = new WP_Query($args); ?>
 
             <div class="row">
                 <div class="col-12">
-                    <h2>Category: <?php echo $urlCategoryName; ?></h2>
+                    <p><a href="<?php echo esc_url(home_url('/projects')); ?>">Projects</a> > <?php echo $urlCategoryName; ?></p>
                 </div><!-- col -->
             </div><!-- row -->
             <div class="row">

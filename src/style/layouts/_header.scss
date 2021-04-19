@@ -159,3 +159,12 @@
     z-index: 99999;
     border-top: 0;
 }
+
+.sticky + .mainnav-m {
+    position: fixed !important;
+    width: 100%;
+    left: 0;
+    top: 61.531px;
+    z-index: 99999;
+    border-top: 0;
+}
