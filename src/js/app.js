@@ -64,7 +64,7 @@ jQuery(function () {
         margin:120,
         dots: true,
         nav: true,
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 1500,
         autoplayTimeout: 9000,
         responsive:{
