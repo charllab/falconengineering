@@ -143,7 +143,15 @@
                                      style="background-image: url(<?php echo $postimage['url']; ?>); background-repeat: no-repeat; background-size: cover;">
                                     <div class="block__tint-overlay block__tint-overlay--hover"></div>
                                     <div class="stacker-content position-relative z-index-100">
-                                        <h2 class="stacker-title text-white"><?php the_title(); ?></h2>
+                                        <h2 class="stacker-title text-white">
+                                            <?php
+                                            $thetitle = $post->post_title; /* or you can use get_the_title() */
+                                            $getlength = strlen($thetitle);
+                                            $thelength = 35;
+                                            echo substr($thetitle, 0, $thelength);
+                                            if ($getlength > $thelength) echo "&hellip;";
+                                            ?>
+                                            </h2>
                                         <div class="btn btn-outline-light">Read More</div>
                                     </div><!-- stacker-content -->
                                 </div><!-- stacker -->
