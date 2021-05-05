@@ -1,5 +1,6 @@
 
 .home {
+
     @include media-breakpoint-up(lg) {
         .hero-nav-overlay {
             height: 100%;
@@ -10,6 +11,14 @@
             position: absolute;
         }
     }
+
+    @media (max-height: 992px) {
+        .hero-nav-overlay {
+            height: auto;
+        }
+    }
+
+
 }
 
 .hero-nav-overlay {
