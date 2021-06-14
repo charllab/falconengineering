@@ -28,7 +28,7 @@ get_header(); ?>
                     </div><!-- col -->
 
                     <div class="col-lg-5">
-                        <div class="pt-1 pb-75 xp-50 px-sm-2 bg-light">
+                        <div class="pt-1 pb-75 px-50 px-sm-2 bg-light">
                             <h2 class="h3">Contact Information</h2>
                             <?php
                             $removethese = array("(", " ", ")", "-");
