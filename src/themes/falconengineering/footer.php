@@ -103,7 +103,7 @@
                         <?php wp_reset_postdata(); endwhile; ?>
                     </ul>
                 </div>
-                <div class="col d-flex flex-column justify-content-center align-items-center px-0">
+                <div class="col d-flex flex-xl-column justify-content-xl-center align-items-center px-0 mt-150 mt-xl-0">
                     <a href="<?php echo esc_url(home_url('/contact')); ?>" class="btn btn-primary">Send Us a Message</a>
                 </div>
             </div>
