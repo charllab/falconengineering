@@ -28,7 +28,7 @@ get_header(); ?>
                     </div><!-- col -->
 
                     <div class="col-lg-5">
-                        <div class="pt-1 pb-75 px-2 bg-light">
+                        <div class="pt-1 pb-75 xp-50 px-sm-2 bg-light">
                             <h2 class="h3">Contact Information</h2>
                             <?php
                             $removethese = array("(", " ", ")", "-");
@@ -37,13 +37,15 @@ get_header(); ?>
                                 <tr>
                                     <td><strong>Phone: </strong></td>
                                     <td>
-                                        <a href="tel:+1<?php echo strip_tel(get_field('phone_number', 'option')); ?>" class="text-body"><?php echo get_field('phone_number', 'option'); ?></a>
+                                        <a href="tel:+1<?php echo strip_tel(get_field('phone_number', 'option')); ?>"
+                                           class="text-body"><?php echo get_field('phone_number', 'option'); ?></a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><strong>E-mail: </strong></td>
                                     <td>
-                                        <a href="mailto:<?php echo get_field('email_address', 'option'); ?>" class="text-body"><?php echo get_field('email_address', 'option'); ?></a>
+                                        <a href="mailto:<?php echo get_field('email_address', 'option'); ?>"
+                                           class="text-body"><?php echo get_field('email_address', 'option'); ?></a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -57,7 +59,8 @@ get_header(); ?>
 
                         <div class="px-0 google-map">
                             <?php $mapurl = get_field('map_embed_code', 'option'); ?>
-                            <iframe src="<?php echo $mapurl; ?>" width="600" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            <iframe src="<?php echo $mapurl; ?>" width="600" height="500" style="border:0;"
+                                    allowfullscreen="" loading="lazy"></iframe>
                         </div><!-- px-0 -->
                     </div><!-- col -->
                 </div><!-- row -->
