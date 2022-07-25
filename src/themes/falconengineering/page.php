@@ -18,7 +18,7 @@ get_header();
         </div><!-- container -->
     <?php endif; ?>
 
-    <?php if (is_page([36])) : ?>
+    <?php if (is_page([36, 1650])) : ?>
 
         <?php if (have_rows('breakdown_blocks')): ?>
             <div class="container">
