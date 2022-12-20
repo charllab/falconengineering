@@ -1,12 +1,12 @@
 <?php
 /**
  *
- * Template Name: Services Page
+ * Template Name: Abouts Page
  *
  **/
 get_header(); ?>
 
-<!--page-services.php-->
+<!--page-abouts.php-->
 
     <main class="my-3">
 

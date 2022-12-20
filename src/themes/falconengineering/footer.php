@@ -40,7 +40,17 @@
                             </td>
                         </tr>
                     </table>
-                </div>
+                    <div class="social-links mb-1">
+                        <p class="mb-250 font-weight-bold text-white mt-50 small">Join us on:</p>
+                        <?php while( have_rows('social_links', 'options') ): the_row(); ?>
+                            <a class="social-link btn btn-link text-white px-0 mr-250 py-0" target="_blank" href="<?php the_sub_field('url'); ?>">
+                                <i class="<?php the_sub_field('icon_class'); ?> fa-lg">
+                                    <span class="sr-only"><?php the_sub_field('label'); ?></span>
+                                </i>
+                            </a>
+                        <?php endwhile; ?>
+                    </div><!-- social-links -->
+                </div><!-- col -->
                 <div class="col-xl-1">
                     <h2 class="h4">Menu</h2>
                     <div class="mainnav-f">

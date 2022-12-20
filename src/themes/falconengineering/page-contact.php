@@ -55,6 +55,16 @@ get_header(); ?>
                                     </td>
                                 </tr>
                             </table>
+                            <div class="social-links">
+                                <p class="mb-250 font-weight-bold mt-50 small">Join us on:</p>
+                                <?php while( have_rows('social_links', 'options') ): the_row(); ?>
+                                    <a class="social-link btn btn-link text-secondary px-0 mr-250 py-0" target="_blank" href="<?php the_sub_field('url'); ?>">
+                                        <i class="<?php the_sub_field('icon_class'); ?> fa-lg">
+                                            <span class="sr-only"><?php the_sub_field('label'); ?></span>
+                                        </i>
+                                    </a>
+                                <?php endwhile; ?>
+                            </div><!-- social-links -->
                         </div><!-- bg-light -->
 
                         <div class="px-0 google-map">
