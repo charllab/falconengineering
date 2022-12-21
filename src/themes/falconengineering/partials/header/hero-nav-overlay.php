@@ -1,7 +1,24 @@
 <header id="header" class="hero-nav-overlay">
 
+    <div class="d-lg-none">
+        <form class="d-flex header-search-form ml-auto" method="GET" action="/" role="search">
+            <input class="form-control search-field"
+                   id="s"
+                   name="s"
+                   type="search"
+                   placeholder="Search"
+                   aria-label="Search"
+            >
+            <button class="btn btn-primary btn-submit-search" type="submit">
+                <i class="fas fa-search"></i>
+                <span class="sr-only">Search</span>
+            </button>
+        </form>
+    </div>
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary px-50 px-lg-0 z-index-500 w-100">
         <div class="container">
+
             <div class="nav-logo">
                 <a href="<?php echo esc_url(home_url('/')); ?>">
                     <img src="<?php bloginfo('template_url'); ?>/images/logo-aligned.svg"
@@ -17,7 +34,6 @@
             </button>
 
             <div class="mainnav-desktop d-lg-flex flex-lg-column d-none d-lg-block">
-
                 <?php wp_nav_menu([
                     'theme_location' => 'primary',
                     'container_class' => 'collapse navbar-collapse',
@@ -27,11 +43,40 @@
                     'menu_id' => 'main-menu',
                     'walker' => new understrap_WP_Bootstrap_Navwalker(),
                 ]); ?>
-
+                <form class="form-inline header-search-form ml-auto mt-50" method="GET" action="/" role="search">
+                    <input class="form-control search-field"
+                           id="s"
+                           name="s"
+                           type="search"
+                           placeholder="Search"
+                           aria-label="Search"
+                    >
+                    <button class="btn btn-primary btn-submit-search" type="submit">
+                        <i class="fas fa-search"></i>
+                        <span class="sr-only">Search</span>
+                    </button>
+                </form>
             </div>
-
         </div>
     </nav>
+
+    <div class="collapse" id="header-search-form" aria-expanded="false">
+        <form class="form-inline header-search-form" method="GET" action="/" role="search">
+            <i class="fa fa-search d-md-none"></i>
+            <input class="form-control search-field"
+                   id="s"
+                   name="s"
+                   type="search"
+                   placeholder="Search"
+                   aria-label="Search"
+            >
+            <button class="sr-only btn btn-primary btn-submit-search" type="submit">
+                <i class="fas fa-search"></i>
+                <span class="sr-only">Search</span>
+            </button>
+        </form>
+    </div><!-- collapse -->
+
 
     <div class="mainnav-m collapse navbar-collapse bg-primary">
         <?php wp_nav_menu([
@@ -83,6 +128,8 @@
             </div><!-- owl-carousel -->
 
         <?php endif; ?>
+
+    <?php elseif ( is_search() ) : ?>
 
     <?php else : ?>
         <?php $pagehero = get_field('page_header_image'); ?>

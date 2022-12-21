@@ -8,3 +8,11 @@ button {
     color: white;
     text-transform: uppercase;
 }
+
+.btn-submit-search {
+    padding: 6px 12px;
+    height: 42px;
+    @include media-breakpoint-only(lg) {
+        margin-right: 1.5rem;
+    }
+}

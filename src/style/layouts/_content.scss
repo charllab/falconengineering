@@ -435,3 +435,14 @@ iframe {
     }
 }
 
+.search-field {
+    border-radius: 0px;
+    height: 42px;
+}
+.search-result {
+    margin-bottom: $spacer*1.5;
+    p {
+        font-size: 70%;
+        margin-bottom: 0;
+    }
+}
