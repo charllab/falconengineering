@@ -447,9 +447,15 @@ input#s {
 }
 .search-result {
     margin-bottom: $spacer*1.5;
+    transition: all 2s;
     p {
         font-size: 70%;
         margin-bottom: 0;
+    }
+    &:hover {
+        * {
+            color: $primary !important;
+        }
     }
 }
 
