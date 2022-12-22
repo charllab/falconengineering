@@ -35,6 +35,8 @@ if (!function_exists('custom_after_setup_theme')) {
         remove_theme_support('custom-background');
         remove_theme_support('post-thumbnails');
 
+        add_post_type_support( 'page', 'excerpt' );
+
         register_nav_menus([
             'primary' => 'Primary Menu',
             'secondary' => 'Footer Menu',
