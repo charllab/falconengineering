@@ -1,21 +1,5 @@
 <header id="header" class="hero-nav-overlay">
 
-    <div class="d-lg-none">
-        <form class="d-flex header-search-form ml-auto" method="GET" action="/" role="search">
-            <input class="form-control search-field"
-                   id="s"
-                   name="s"
-                   type="search"
-                   placeholder="Search"
-                   aria-label="Search"
-            >
-            <button class="btn btn-primary btn-submit-search" type="submit">
-                <i class="fas fa-search"></i>
-                <span class="sr-only">Search</span>
-            </button>
-        </form>
-    </div>
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary px-50 px-lg-0 z-index-500 w-100">
         <div class="container">
 
@@ -60,28 +44,25 @@
         </div>
     </nav>
 
-    <div class="collapse" id="header-search-form" aria-expanded="false">
-        <form class="form-inline header-search-form" method="GET" action="/" role="search">
-            <i class="fa fa-search d-md-none"></i>
-            <input class="form-control search-field"
-                   id="s"
-                   name="s"
-                   type="search"
-                   placeholder="Search"
-                   aria-label="Search"
-            >
-            <button class="sr-only btn btn-primary btn-submit-search" type="submit">
-                <i class="fas fa-search"></i>
-                <span class="sr-only">Search</span>
-            </button>
-        </form>
-    </div><!-- collapse -->
-
-
     <div class="mainnav-m collapse navbar-collapse bg-primary">
+        <div class="d-lg-none pt-0 p-250">
+            <form class="d-flex header-search-form ml-auto border border-primary" method="GET" action="/" role="search">
+                <input class="form-control search-field"
+                       id="s"
+                       name="s"
+                       type="search"
+                       placeholder="Search"
+                       aria-label="Search"
+                >
+                <button class="btn btn-secondary btn-submit-search" type="submit">
+                    <i class="fas fa-search"></i>
+                    <span class="sr-only">Search</span>
+                </button>
+            </form>
+        </div>
         <?php wp_nav_menu([
             'theme_location' => 'primary',
-            'container_class' => 'container px-1 py-75',
+            'container_class' => 'container px-1 pt-250 pb-75 d-lg-none',
             'container_id' => 'mainnav',
             'menu_class' => 'navbar-nav ml-auto',
             'fallback_cb' => '',
@@ -130,6 +111,8 @@
         <?php endif; ?>
 
     <?php elseif ( is_search() ) : ?>
+
+    <?php elseif ( is_archive() ) : ?>
 
     <?php else : ?>
         <?php $pagehero = get_field('page_header_image'); ?>

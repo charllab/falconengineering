@@ -434,7 +434,13 @@ iframe {
         display: none;
     }
 }
-
+input#s {
+    font-size: 80%;
+    border-color: $secondary;
+    @include media-breakpoint-up(lg) {
+        border-color: $primary;
+    }
+}
 .search-field {
     border-radius: 0px;
     height: 42px;
@@ -444,5 +450,19 @@ iframe {
     p {
         font-size: 70%;
         margin-bottom: 0;
+    }
+}
+
+a.tag-link {
+    font-size: 80%;
+    color: white;
+    display: inline-block;
+    text-transform: capitalize;
+    background-color: $primary;
+    padding: $spacer/4 $spacer/2;
+    margin-bottom: $spacer/4;
+
+    &:hover {
+        background-color: darken($primary, 7%);
     }
 }

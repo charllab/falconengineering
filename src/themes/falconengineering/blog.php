@@ -8,11 +8,34 @@ global $post;
 
 get_header(); ?>
 
-    <main class="py-3">
+    <main class="pt-1 pb-3">
+
+        <section class="pb-75">
+            <div class="container">
+                <div class="row">
+                    <p class="mb-50">Filter by Tags:</p>
+                </div>
+                <!--https://stackoverflow.com/questions/41673373/how-do-i-get-all-the-post-tags-in-wordpress-->
+                <?php
+                $tags = get_tags();
+                foreach ( $tags as $tag ) {
+                    $tag_link = get_tag_link( $tag->term_id );
+                ?>
+                    <a href="<?php echo $tag_link; ?>" class="tag-link">
+                        <?php echo ucwords($tag->name) . ' (' .$tag->count . ')'; ?>
+                    </a>
+                <?php
+                } ?>
+                <?php
+                wp_reset_postdata();
+                ?>
+            </div>
+        </section>
+
         <section class="general-sect__padding">
 
             <div class="container">
-                <div class="row">
+                <div class="row mb-1">
                     <?php
 
                     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -20,6 +43,8 @@ get_header(); ?>
                         'posts_per_page' => 10,
                         'paged' => $paged
                     );
+
+                    $query=new WP_Query(array('posts_per_page=-1', ));
 
                     $wp_query = new WP_Query();
                     $wp_query->query($args);
@@ -63,7 +88,6 @@ get_header(); ?>
 
             </div><!-- container -->
         </section><!-- .section -->
-
 
     </main>
 
