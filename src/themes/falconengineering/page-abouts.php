@@ -109,55 +109,6 @@ get_header(); ?>
                     </div><!-- col -->
                 </div><!-- row -->
 
-                <?php if (have_rows('team_members')): ?>
-
-                    <div class="row">
-
-                        <div class="col-12">
-                            <h2 class="h1 semi-bold" data-aos="fade-up">Principals</h2>
-                        </div>
-
-
-                        <?php $count = 0;
-                        while (have_rows('team_members')) : the_row();
-                            $photo = get_sub_field('photo'); ?>
-
-                            <div class="col-sm-6 col-xxxl-4" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1500">
-                                <a data-toggle="modal" data-target="#modal-<?php echo $count; ?>">
-                                    <div class="stacker stacker--team bg-info text-white position-relative"
-                                         style="background-image: url(<?php echo esc_url($photo['url']); ?>); background-size: cover; background-position: center;">
-                                        <div class="block__tint-overlay block__tint-overlay--hover"></div>
-                                        <div class="stacker-content position-relative z-index-100">
-                                            <div class="stacker-details--min-h">
-                                                <h2 class="stacker-title text-white"><?php the_sub_field('name'); ?></h2>
-                                                <p><?php the_sub_field('job_title'); ?></p>
-                                            </div><!-- stacker-details--min-h -->
-                                            <div class="btn btn-outline-light">Read Full Bio</div>
-                                        </div><!-- stacker-content -->
-                                    </div><!-- stacker -->
-                                </a>
-                            </div><!-- col -->
-
-                            <div class="modal fade" id="modal-<?php echo $count; ?>" tabindex="-1" role="dialog"
-                                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-body p-2">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                            <h2 class="h3"><?php the_sub_field('name'); ?></h2>
-                                            <?php the_sub_field('full_bio'); ?>
-                                            <a href="mailto:<?php echo get_field('email_address', 'option'); ?>" class="btn btn-primary">Contact Us</a>
-                                        </div><!-- modal-body -->
-                                    </div><!-- modal-content -->
-                                </div><!-- modal-dialog -->
-                            </div><!-- modal -->
-
-                            <?php $count++; endwhile; ?>
-
-                    </div><!-- row -->
-                <?php endif; ?>
             </div><!-- container -->
         </section>
 
